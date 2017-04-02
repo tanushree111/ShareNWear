@@ -37,7 +37,7 @@
 
         function findEbayProd() {
 
-            UserService
+           /* UserService
                 .findEbayProd()
                 .then(
                     function (response) {
@@ -45,7 +45,7 @@
                     },
                     function (err) {
                         vm.error = "Invalid Username and Password";
-                    });
+                    });*/
 
         }
 
@@ -55,12 +55,13 @@
     function RegisterController($location, $rootScope, UserService) {
         var vm = this;
         vm.register = register;
-        vm.confirmPassword;
+        vm.confirmPassword="";
 
         function register(user) {
             if (!user || !user.username || !user.password || !vm.confirmPassword || !user.email) {
                 vm.error = "Username, Password and Email are mandatory";
             } else if (user.password === vm.confirmPassword) {
+                //user.registeredOn = new Date();
                 UserService
                     .register(user)
                     .then(
@@ -81,8 +82,7 @@
 
     function ProfileController($location, $routeParams, $rootScope, UserService, RentalService, UserReviewService, MessageService) {
         var vm = this;
-        vm.userId = $rootScope.currentUser._id;
-        ;
+        vm.userId = $rootScope.currentUser.id;
         vm.logout = logout;
         function init() {
             UserService.findUserById(vm.userId)
@@ -92,7 +92,7 @@
                 .error(function () {
                     vm.error = "Unable to fetch user";
                 });
-            RentalService.findRentalsByLender(vm.userId)
+           /* RentalService.findRentalsByLender(vm.userId)
                 .success(function (lents) {
                     vm.lents = lents;
                 })
@@ -133,7 +133,7 @@
                 })
                 .error(function () {
                     vm.error = "Unable to fetch sent messages";
-                });
+                });*/
 
         }
 

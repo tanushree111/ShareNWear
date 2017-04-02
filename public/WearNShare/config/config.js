@@ -48,7 +48,7 @@
                 templateUrl: "views/user/profile.view.client.html",
                 controller: "ProfileController",
                 controllerAs: "model",
-                resolve: { loggedin: checkLoggedin }
+                //resolve: { loggedin: checkLoggedin }
             })
             .when("/admin", {
                 templateUrl: "views/admin/admin.view.client.html",

@@ -22,6 +22,7 @@
   "homepage": "https://github.com/trinoy/webdev-project-tintan#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.1",
@@ -30,6 +31,7 @@
     "express-xml-bodyparser": "^0.3.0",
     "mongoose": "^4.7.2",
     "multer": "^1.2.0",
+    "mysql": "^2.13.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-local": "^1.0.0"

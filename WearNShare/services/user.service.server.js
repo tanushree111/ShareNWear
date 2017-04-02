@@ -13,17 +13,8 @@ module.exports = function (app, model) {
     var passport = require('passport');
     var LocalStrategy = require('passport-local').Strategy;
     passport.use(new LocalStrategy(localStrategy));
-
-    var FacebookStrategy = require('passport-facebook').Strategy;
-    var facebookConfig = {
-        clientID: process.env.FACEBOOK_CLIENT_ID || "1361521017254995",
-        clientSecret: process.env.FACEBOOK_CLIENT_SECRET || "8c7201e2da6ca68b76d493bf5a39ea17",
-        callbackURL: process.env.FACEBOOK_CALLBACK_URL || "http://localhost:3000/auth/facebook/callback"
-    };
-    passport.use(new FacebookStrategy(facebookConfig, facebookStrategy));
     passport.serializeUser(serializeUser);
     passport.deserializeUser(deserializeUser);
-
     var bcrypt = require("bcrypt-nodejs");
 
     app.post('/api/upload', upload.single('myFile'), uploadImage);
@@ -40,12 +31,6 @@ module.exports = function (app, model) {
     app.post('/api/register', register);
     app.get('/api/loggedin', loggedin);
     app.post('/api/checkAdmin', checkAdmin);
-    app.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
-    app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect: '/WearNShare/index.html#/user',
-            failureRedirect: '/WearNShare/index.html#/login'
-        }));
 
     function findAllUser(req, res) {
         model
@@ -126,19 +111,13 @@ module.exports = function (app, model) {
 
     function findUserById(req, res) {
         var userId = req.params.uid;
-        /*for(var u in users){
-         if(users[u]._id === userId){
-         res.send(users[u]);
-         return;
-         }
-         }*/
         model
             .userModel
             .findUserById(userId)
             .then(
-                function (user) {
-                    if (user) {
-                        res.json(user);
+                function (users) {
+                    if (users.length != 0) {
+                        res.send(users[0]);
                     } else {
                         res.send('0');
                     }
@@ -243,10 +222,10 @@ module.exports = function (app, model) {
     function deserializeUser(user, done) {
         model
             .userModel
-            .findUserById(user._id)
+            .findUserById1(user.id)
             .then(
-                function (user) {
-                    done(null, user);
+                function (users) {
+                    done(null, users[0]);
                 },
                 function (err) {
                     done(err, null);
@@ -260,8 +239,8 @@ module.exports = function (app, model) {
             .findUserByUsername(username)
             .then(
                 function (user) {
-                    if (user && bcrypt.compareSync(password, user.password)) {
-                        return done(null, user);
+                    if (user.length == 1 && bcrypt.compareSync(password, user[0].password)) {
+                        return done(null, user[0]);
                     } else {
                         return done(null, false);
                     }
@@ -271,7 +250,10 @@ module.exports = function (app, model) {
                         return done(err);
                     }
                 }
-            );
+            )
+            .catch(function(error){
+                console.log("error");
+            });
     }
 
     function login(req, res) {
@@ -307,7 +289,8 @@ module.exports = function (app, model) {
     }
 
     function loggedin(req, res) {
-        res.send(req.isAuthenticated() ? req.user : '0');
+        var a = req.isAuthenticated();
+        res.send(a ? req.user : '0');
     }
 
     function checkAdmin(req, res) {
@@ -321,45 +304,6 @@ module.exports = function (app, model) {
         } else {
             res.send('0');
         }
-    }
-
-    function facebookStrategy(token, refreshToken, profile, done) {
-        model.userModel
-            .findUserByFacebookId(profile.id)
-            .then(
-                function (user) {
-                    if (user) {
-                        return done(null, user);
-                    } else {
-                        var names = profile.displayName.split(" ");
-                        var newFacebookUser = {
-                            lastName: names[1],
-                            firstName: names[0],
-                            email: profile.emails ? profile.emails[0].value : "",
-                            facebook: {
-                                id: profile.id,
-                                token: token
-                            }
-                        };
-                        return model.userModel.createUser(newFacebookUser);
-                    }
-                },
-                function (err) {
-                    if (err) {
-                        return done(err);
-                    }
-                }
-            )
-            .then(
-                function (user) {
-                    return done(null, user);
-                },
-                function (err) {
-                    if (err) {
-                        return done(err);
-                    }
-                }
-            );
     }
 
     function uploadImage(req, res) {
@@ -409,49 +353,4 @@ module.exports = function (app, model) {
 
 
     }
-
-    /*    var params = {
-     keywords: ["Canon", "Powershot"],
-
-     // add additional fields
-     outputSelector: ['AspectHistogram'],
-
-     paginationInput: {
-     entriesPerPage: 10
-     },
-
-     itemFilter: [
-     {name: 'FreeShippingOnly', value: true},
-     {name: 'MaxPrice', value: '150'}
-     ],
-
-     domainFilter: [
-     {name: 'domainName', value: 'Digital_Cameras'}
-     ]
-     };
-
-     function findEbayProd(req, res) {
-     var items;
-     ebay.xmlRequest({
-     serviceName: 'Finding',
-     opType: 'findItemsByKeywords',
-     appId: 'Tanushre-Sharedro-PRD-e45f30466-769092f5',      // FILL IN YOUR OWN APP KEY, GET ONE HERE: https://publisher.ebaypartnernetwork.com/PublisherToolsAPI
-     params: params,
-     parser: ebay.parseResponseJson    // (default)
-     },
-     // gets all the items together in a merged array
-     function itemsCallback(error, itemsResponse) {
-     if (error) throw error;
-
-     items = itemsResponse.searchResult.item;
-
-     console.log('Found', items.length, 'items');
-
-     for (var i = 0; i < items.length; i++) {
-     console.log('- ' + items[i].title);
-     }
-     }
-     );
-     res.send(items)
-     };*/
 }
