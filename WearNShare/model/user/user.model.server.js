@@ -33,11 +33,14 @@ module.exports = function (connection) {
                 resolve(results);
             });
         });
-
-
     }
 
     function findUserById(userId) {
+       /* return UserModel.findById(userId)
+            .populate("followers", "username firstName lastName url")
+            .populate("likes", "username firstName lastName url")
+            .exec(); //--- returns an object*/
+
         return new Promise(function (resolve, reject) {
             connection.query({
                 sql: 'SELECT * FROM `Users` WHERE `id` = ?',

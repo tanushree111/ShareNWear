@@ -92,6 +92,20 @@
                 .error(function () {
                     vm.error = "Unable to fetch user";
                 });
+          /*  MessageService.findMessageForUserId(vm.userId)
+                .success(function (msgs) {
+                    vm.inbox = msgs;
+                })
+                .error(function () {
+                    vm.error = "Unable to fetch inbox messages";
+                });
+            MessageService.findMessageByUserId(vm.userId)
+                .success(function (msgs) {
+                    vm.sent = msgs;
+                })
+                .error(function () {
+                    vm.error = "Unable to fetch sent messages";
+                });*/
            /* RentalService.findRentalsByLender(vm.userId)
                 .success(function (lents) {
                     vm.lents = lents;
@@ -119,24 +133,8 @@
                 })
                 .error(function () {
                     vm.error = "Unable to fetch reviews by you";
-                });
-            MessageService.findMessageForUserId(vm.userId)
-                .success(function (msgs) {
-                    vm.inbox = msgs;
-                })
-                .error(function () {
-                    vm.error = "Unable to fetch inbox messages";
-                });
-            MessageService.findMessageByUserId(vm.userId)
-                .success(function (msgs) {
-                    vm.sent = msgs;
-                })
-                .error(function () {
-                    vm.error = "Unable to fetch sent messages";
                 });*/
-
         }
-
         init();
 
 

@@ -19,9 +19,14 @@ module.exports = function() {
     });
 
     var userModel = require("./user/user.model.server")(connection);
+    var messageModel = require("./message/message.model.server")(connection);
+    var userReviewModel = require("./userReview/userreview.model.server")(connection);
+
 
     var model = {
-        userModel: userModel
+        userModel: userModel,
+        messageModel : messageModel,
+        userReviewModel:userReviewModel
     };
 
     return model;

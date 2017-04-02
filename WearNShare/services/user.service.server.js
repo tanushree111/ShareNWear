@@ -238,119 +238,121 @@ module.exports = function (app, model) {
             .userModel
             .findUserByUsername(username)
             .then(
-                function (user) {
-                    if (user.length == 1 && bcrypt.compareSync(password, user[0].password)) {
-                        return done(null, user[0]);
+                function (users) {
+                    //if (user.length == 1 && bcrypt.compareSync(password, user[0].password)) {
+                    if (users.length == 1 && users[0].password == password) {
+                        return done(null, users[0]);
                     } else {
                         return done(null, false);
                     }
                 },
-                function (err) {
+                 function (err) {
                     if (err) {
                         return done(err);
                     }
-                }
+                 }
+
             )
-            .catch(function(error){
+            .catch(function (error) {
                 console.log("error");
             });
-    }
+}
 
-    function login(req, res) {
-        var user = req.user;
-        res.json(user);
-    }
+function login(req, res) {
+    var user = req.user;
+    res.json(user);
+}
 
-    function logout(req, res) {
-        req.logOut();
-        res.send(200);
-    }
+function logout(req, res) {
+    req.logOut();
+    res.send(200);
+}
 
-    function register(req, res) {
-        var user = req.body;
-        user.password = bcrypt.hashSync(user.password);
-        model.userModel
-            .createUser(user)
-            .then(function (user) {
-                    if (user) {
-                        req.login(user, function (err) {
-                            if (err) {
-                                res.status(400).send(err);
-                            } else {
-                                res.json(user);
-                            }
-                        });
-                    }
-                },
-                function (err) {
-                    res.status(400).send(err);
-                }
-            );
-    }
-
-    function loggedin(req, res) {
-        var a = req.isAuthenticated();
-        res.send(a ? req.user : '0');
-    }
-
-    function checkAdmin(req, res) {
-        var loggedIn = req.isAuthenticated();
-        var isAdmin = false;
-        if(req.user!=undefined){
-            isAdmin = req.user.role == "ADMIN";
-        }
-        if(loggedIn && isAdmin) {
-            res.json(req.user);
-        } else {
-            res.send('0');
-        }
-    }
-
-    function uploadImage(req, res) {
-        var url = "";
-        var userId = req.body.userId;
-        var myFile = req.file;
-
-        var originalname = myFile.originalname; // file name on user's computer
-        var filename = myFile.filename;     // new file name in upload folder
-        var path = myFile.path;         // full path of uploaded file
-        var destination = myFile.destination;  // folder where file is saved to
-        var size = myFile.size;
-        var mimetype = myFile.mimetype;
-        if (userId != null && userId != "") {
-            model
-                .userModel
-                .findUserById(userId)
-                .then(
-                    function (user) {
-                        if (user) {
-                            user.url = '/WearNShare/uploads/' + filename;
-                            model
-                                .userModel
-                                .updateUser(userId, user)
-                                .then(
-                                    function (status) {
-                                        url = '../WearNShare/index.html#/user';
-                                        res.redirect(url);
-                                    },
-                                    function (error) {
-                                        // res.sendStatus(400).send(error);
-                                    }
-                                );
-
+function register(req, res) {
+    var user = req.body;
+    user.password = bcrypt.hashSync(user.password);
+    model.userModel
+        .createUser(user)
+        .then(function (user) {
+                if (user) {
+                    req.login(user, function (err) {
+                        if (err) {
+                            res.status(400).send(err);
                         } else {
-                            url = '/';
+                            res.json(user);
                         }
+                    });
+                }
+            },
+            function (err) {
+                res.status(400).send(err);
+            }
+        );
+}
 
-                    },
-                    function (error) {
+function loggedin(req, res) {
+    var a = req.isAuthenticated();
+    res.send(a ? req.user : '0');
+}
+
+function checkAdmin(req, res) {
+    var loggedIn = req.isAuthenticated();
+    var isAdmin = false;
+    if (req.user != undefined) {
+        isAdmin = req.user.role == "ADMIN";
+    }
+    if (loggedIn && isAdmin) {
+        res.json(req.user);
+    } else {
+        res.send('0');
+    }
+}
+
+function uploadImage(req, res) {
+    var url = "";
+    var userId = req.body.userId;
+    var myFile = req.file;
+
+    var originalname = myFile.originalname; // file name on user's computer
+    var filename = myFile.filename;     // new file name in upload folder
+    var path = myFile.path;         // full path of uploaded file
+    var destination = myFile.destination;  // folder where file is saved to
+    var size = myFile.size;
+    var mimetype = myFile.mimetype;
+    if (userId != null && userId != "") {
+        model
+            .userModel
+            .findUserById(userId)
+            .then(
+                function (user) {
+                    if (user) {
+                        user.url = '/WearNShare/uploads/' + filename;
+                        model
+                            .userModel
+                            .updateUser(userId, user)
+                            .then(
+                                function (status) {
+                                    url = '../WearNShare/index.html#/user';
+                                    res.redirect(url);
+                                },
+                                function (error) {
+                                    // res.sendStatus(400).send(error);
+                                }
+                            );
+
+                    } else {
                         url = '/';
                     }
-                );
-        } else {
-            url = '/'
-        }
 
-
+                },
+                function (error) {
+                    url = '/';
+                }
+            );
+    } else {
+        url = '/'
     }
+
+
+}
 }
