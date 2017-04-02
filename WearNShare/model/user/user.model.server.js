@@ -3,13 +3,11 @@ module.exports = function (connection) {
     var api = {
         createUser: createUser,
         findUserById: findUserById,
-        findUserById1: findUserById1,
         findAllUser: findAllUser,
         updateUser: updateUser,
         findUserByCredentials: findUserByCredentials,
         findUserByUsername: findUserByUsername,
         deleteUser: deleteUser,
-        findUserByFacebookId: findUserByFacebookId,
         // findFollowersByUserId: findFollowersByUserId,
         // findLikesByUserId: findLikesByUserId,
         addFollowersForUserId: addFollowersForUserId,
@@ -23,53 +21,21 @@ module.exports = function (connection) {
     }
 
     function createUser(user) {
-        return new Promise(function (resolve, reject) {
-            user.registeredOn = new Date();
-            connection.query('INSERT INTO Users SET ?', user, function (error, results, fields) {
-                if (error) {
-                    console.log(error);
-                    reject(error);
-                }
-                resolve(results);
-            });
-        });
+        user.registeredOn = new Date();
+        return connection.query('INSERT INTO Users SET ?', user);
     }
 
     function findUserById(userId) {
-       /* return UserModel.findById(userId)
-            .populate("followers", "username firstName lastName url")
-            .populate("likes", "username firstName lastName url")
-            .exec(); //--- returns an object*/
-
-        return new Promise(function (resolve, reject) {
-            connection.query({
-                sql: 'SELECT * FROM `Users` WHERE `id` = ?',
-                timeout: 40000, // 40s
-                values: [userId]
-            }, function (error, results, fields) {
-                if (error) {
-                    console.log(error);
-                    reject(error);
-                }
-                resolve(results);
-            });
+        /* return UserModel.findById(userId)
+         .populate("followers", "username firstName lastName url")
+         .populate("likes", "username firstName lastName url")
+         .exec(); //--- returns an object*/
+        return connection.query({
+            sql: 'SELECT * FROM `Users` WHERE `id` = ?',
+            timeout: 40000, // 40s
+            values: [userId]
         });
-    }
 
-    function findUserById1(userId) {
-        return new Promise(function (resolve, reject) {
-            connection.query({
-                sql: 'SELECT * FROM `Users` WHERE `id` = ?',
-                timeout: 40000, // 40s
-                values: [userId]
-            }, function (error, results, fields) {
-                if (error) {
-                    console.log(error);
-                    reject(error);
-                }
-                resolve(results);
-            });
-        });
     }
 
     function findUserByCredentials(username, password) {
@@ -82,18 +48,24 @@ module.exports = function (connection) {
 
     function findUserByUsername(username) {
 
-        return new Promise(function (resolve, reject) {
-            connection.query({
-                sql: 'SELECT * FROM `Users` WHERE `username` = ?',
-                timeout: 40000, // 40s
-                values: [username]
-            }, function (error, results, fields) {
-                if (error) {
-                    console.log(error);
-                    reject(error);
-                }
-                resolve(results);
-            });
+        /* return new Promise(function (resolve, reject) {
+         connection.query({
+         sql: 'SELECT * FROM `Users` WHERE `username` = ?',
+         timeout: 40000, // 40s
+         values: [username]
+         }, function (error, results, fields) {
+         if (error) {
+         console.log(error);
+         reject(error);
+         }
+         resolve(results);
+         });
+         });*/
+
+        return connection.query({
+            sql: 'SELECT * FROM `Users` WHERE `username` = ?',
+            timeout: 40000, // 40s
+            values: [username]
         });
     }
 

@@ -1,8 +1,8 @@
 module.exports = function(app, model) {
 
     app.post('/api/message', createMessage);
-    app.get('/api/user/:userId/sent', findMessageByUserId);
-    app.get('/api/user/:userId/received', findMessageForUserId);
+    app.get('/api/message/:userId/sent', findMessageByUserId);
+    app.get('/api/message/:userId/received', findMessageForUserId);
     app.delete('/api/message/:messageId', deleteMessage);
 
     function findMessageByUserId(req, res){
@@ -26,9 +26,7 @@ module.exports = function(app, model) {
 
     function findMessageForUserId(req, res){
         var userId = req.params.userId;
-        model
-            .messageModel
-            .findMessageForUserId(userId)
+        model.messageModel.findMessageForUserId(userId)
             .then(
                 function(messages){
                     if(messages) {

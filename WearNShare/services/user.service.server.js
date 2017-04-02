@@ -222,7 +222,7 @@ module.exports = function (app, model) {
     function deserializeUser(user, done) {
         model
             .userModel
-            .findUserById1(user.id)
+            .findUserById(user.id)
             .then(
                 function (users) {
                     done(null, users[0]);
@@ -355,4 +355,4 @@ function uploadImage(req, res) {
 
 
 }
-}
+};

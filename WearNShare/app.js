@@ -1,4 +1,4 @@
-module.exports = function(app) {
-    var model = require("./Model/models.server")();
+module.exports = function (app, model) {
     require("./services/user.service.server.js")(app, model);
+    require("./services/message.service.server.js")(app, model);
 };

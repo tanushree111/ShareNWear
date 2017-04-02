@@ -19,12 +19,12 @@
         }
 
         function findMessageByUserId(userId) {
-            var url = "/api/user/"+userId+"/sent";
+            var url = "/api/message/"+userId+"/sent";
             return $http.get(url);
         }
 
         function findMessageForUserId(userId) {
-            var url = "/api/user/"+userId+"/received";
+            var url = "/api/message/"+userId+"/received";
             return $http.get(url);
         }
 
