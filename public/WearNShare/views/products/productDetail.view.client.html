@@ -1,0 +1,223 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left leftnavs">
+            <a class="white-icon" href="#/products">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="leftnavbran">WearNShare</span>
+            </a>
+        </div>
+
+        <div class="navbar-text pull-right rightnavs">
+            <a class="white-icon" ng-click="model.logout()">
+                <i class="fa fa-sign-out"></i>
+            </a>
+        </div>
+        <div class="navbar-text pull-right rightnavs">
+            <a class="white-icon" href="#/user">
+                <i class="fa fa-user"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+
+    <div class="card">
+        <div class="wrapper row">
+            <div class="preview col-md-4">
+                <img col-md-4 col-xs-12 style="height:250px"
+                     src="{{model.productDetail.PictureURL[0]}}"/>
+            </div>
+            <div class="details col-md-4 col-xs-12">
+                <h3 class="product-title text-primary">{{model.productDetail.Title}}</h3>
+                <div class="rating">
+                    <p class="review-no"><b>Category:-</b> {{model.productDetail.PrimaryCategoryName}}</p>
+                </div>
+                <div class="btn-group">
+                    <label class="btn btn-primary" ng-model="model.mode" uib-btn-radio="'Rent'">Rent</label>
+                    <label class="btn btn-primary" ng-model="model.mode" uib-btn-radio="'Lent'">Lend</label>
+                </div>
+                    <h5>Size</h5>
+                    <select selectpicker ng-model="model.selectedOption" ng-options="size as size for size in model.sizes"
+                            toggle-dropdown>
+                        <option value="">Select one</option>
+                    </select>
+               <!-- <input class="price-input" ng-show="model.mode=='Lent'" name="price" ng-model="model.price" type="text"
+                       placeholder="Price"/>-->
+                <div ng-show="model.mode=='Lent'" class="input-group price-input">
+                    <span class="input-group-addon">$</span>
+                    <input name="price" ng-model="model.price"  type="text" class="form-control"
+                           aria-label="Amount (to the nearest dollar)" placeholder="Whats Your Deal">
+                </div>
+                <div class="action rent-button">
+                    <button ng-click="model.findRentalsByProduct(model.selectedOption,model.elementId)"
+                            ng-show="model.mode=='Rent'"class="btn btn-primary"
+                            type="button">Find Lenders</button>
+                    <button ng-click="model.createRental()" ng-show="model.mode=='Lent'" class="btn btn-primary"
+                            type="button">Lend It</button>
+                    <button class="btn btn-primary" ng-click="model.toggleShowReview(true)" type="button">Add a
+                        Review</button>
+
+                </div>
+                <div uib-alert ng-repeat="alert in model.alerts" ng-class="'alert-' + (alert.type || 'info')"
+                     close="model.closeAlert($index)" dismiss-on-timeout="3000">{{alert.msg}}</div>
+            </div>
+
+            <div class="col-md-4 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading c-list">
+                        <span class="title">Renters</span>
+                    </div>
+                    <ul class="list-group seller-height" id="contact-list">
+                        <li ng-show="!model.rentals.length">No Lenders Found</li>
+                        <li class="list-group-item" ng-repeat="rental in model.rentals">
+                            <div class="col-xs-12 col-sm-3 cold-md-3 col-lg-3">
+                                <a href ="#/user/{{model.userID}}/seller/{{rental.lender._id}}">
+                                <img ng-src="{{rental.lender.url || 'https://app.nimia.com/static/img/default_profile.png'}}"
+                                     class="img-responsive img-circle"/></a>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <span class="name">{{rental.lender.firstName}}&nbsp{{rental.lender.lastName}}</span><br/>
+                                <span class="glyphicon glyphicon-envelope text-muted c-info" data-toggle="tooltip"
+                                      title="scott.stevens@example.com"></span>
+                                <span class="text-muted">{{rental.lender.email}}</span><br/>
+                                <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip"
+                                      title="(870) 288-4149"></span><br>
+                                <span class="text-muted">{{rental.lender.phone}}</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 cold-md-3 col-lg-3 seller-amount">
+                                <span class="text-move-down">{{rental.price}}<i class="fa fa-dollar"></i></span>
+                                <button ng-click="model.updateRental(rental)" class="btn btn-primary" type="button">Rent
+                                    It</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper row">
+            <div ng-include="'views/products/productReview.view.client.html'"></div>
+        </div>
+
+        <div class="wrapper row detail-tab-margin">
+            <div class="col-md-12 col-xs-12" id="logout">
+                <div class="comment-tabs">
+                    <ul class="nav nav-pills" role="tablist">
+                        <li class="active">
+                            <a class="reviews text-capitalize">
+                                <span href="#product-description" role="tab" data-toggle="tab">Descripton</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="reviews text-capitalize">
+                                <span href="#related-products" role="tab" data-toggle="tab">Related</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="reviews text-capitalize">
+                                <span href="#product-reviews" role="tab" data-toggle="tab">Review</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="tab-content detail-tab-panel">
+                    <div class="tab-pane active" id="product-description">
+                        <div class="">
+                            <div class="panel panel-default panel-table panel-table-margin">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="">
+                                            <h3 class="panel-title">Product Description</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <p>{{model.productDetail.Description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="related-products">
+                        <div class="row panel-table-margin list-group">
+                            <div class="item card-box col-md-3 col-sm-12 col-xs-12 col-lg-3"
+                                 ng-repeat="relProd in model.relProds">
+                                <div class="thumbnail">
+                                    <a class="ebay" target="_blank" href="{{relProd.viewItemURL}}">
+                                        <img class="ebay-image" src="image/ebay.png">
+                                    </a>
+                                    <h4 class="box-header">{{relProd.title}}</h4>
+                                    <h7>{{relProd.primaryCategoryName}}</h7>
+                                    <img class="group list-group-image image-rel-prod" ng-src="{{relProd.imageURL}}"/>
+                                    <div class="row card-button">
+                                        <div>
+                                            <span>
+                                                <a class="btn btn-primary" href="#/productDetail/{{relProd.itemId}}">
+                                                    Details</a>
+                                            </span>
+                            <!--                <span>
+                                                <a class="btn btn-danger"
+                                                   href="#/productDetail/{{product.itemId}}">Rent</a>
+                                            </span>-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="product-reviews">
+                        <div class="wrapper row panel-table-margin">
+                            <div class="col-sm-12 col-xs-12 col-md-3 col-lg-3" ng-repeat="review in model.reviews">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                         <span itemscope>
+                                             <h3 class="panel-title">{{review.title}}</h3>
+                                         </span>
+                                    </div>
+                                    <div class="panel-body">
+                                        <p>{{review.description}}</p>
+                                        <span></span>
+                                        <span>{{review.by.firstName}}</span>
+                                        <span class ="pull-right">
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                        <span>{{review.dateCreated  | date: MMM/yyyy}}</span>
+                                        </span>
+
+                                    </div>
+                                    <div class="panel-footer clearfix">
+                                        <span class="pull-right">
+                                            <span class="reviewRating">
+                                                <meta content="1"><span itemprop="ratingValue">{{review.rating}}</span>
+                                                <span itemprop="bestRating">stars</span>
+                                            </span>
+                                                  <span ng-repeat="_ in ((_ = []) && (_.length=review.rating) && _) track by $index"
+                                                        class="glyphicon glyphicon-star"
+                                                        aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,169 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1" id="logout">
+            <div class="page-header">
+                <h3 class="reviews">Leave your comment</h3>
+            </div>
+            <div class="comment-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li>
+                        <span href="#comments-logout" role="tab" data-toggle="tab">
+                            <button class="reviews text-capitalize">Add comment1  </button>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span href="#add-comment" role="tab" data-toggle="tab">
+                            <button class="reviews text-capitalize">Add comment  </button>
+                        </span>
+                    </li>
+                    <li>
+                        <button class="reviews text-capitalize">
+                        <span href="#product-reviews" role="tab" data-toggle="tab">Product Review</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="comments-logout">
+                    <ul class="media-list">
+                        <li class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object img-circle"
+                                     src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg"
+                                     alt="profile">
+                            </a>
+                            <div class="media-body">
+                                <div class="well well-lg">
+                                    <h4 class="media-heading text-uppercase reviews">Marco </h4>
+                                    <ul class="media-date text-uppercase reviews list-inline">
+                                        <li class="dd">22</li>
+                                        <li class="mm">09</li>
+                                        <li class="aaaa">2014</li>
+                                    </ul>
+                                    <p class="media-comment">
+                                        Great snippet! Thanks for sharing.
+                                    </p>
+                                    <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span
+                                            class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                    <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse"
+                                       href="#replyOne"><span class="glyphicon glyphicon-comment"></span> 2 comments</a>
+                                </div>
+                            </div>
+                            <div class="collapse" id="replyOne">
+                                <ul class="media-list">
+                                    <li class="media media-replied">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object img-circle"
+                                                 src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg"
+                                                 alt="profile">
+                                        </a>
+                                        <div class="media-body">
+                                            <div class="well well-lg">
+                                                <h4 class="media-heading text-uppercase reviews"><span
+                                                        class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
+                                                <ul class="media-date text-uppercase reviews list-inline">
+                                                    <li class="dd">22</li>
+                                                    <li class="mm">09</li>
+                                                    <li class="aaaa">2014</li>
+                                                </ul>
+                                                <p class="media-comment">
+                                                    Nice job Maria.
+                                                </p>
+                                                <a class="btn btn-info btn-circle text-uppercase" href="#"
+                                                   id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="media media-replied" id="replied">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object img-circle"
+                                                 src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg"
+                                                 alt="profile">
+                                        </a>
+                                        <div class="media-body">
+                                            <div class="well well-lg">
+                                                <h4 class="media-heading text-uppercase reviews"><span
+                                                        class="glyphicon glyphicon-share-alt"></span> Mary</h4></h4>
+                                                <ul class="media-date text-uppercase reviews list-inline">
+                                                    <li class="dd">22</li>
+                                                    <li class="mm">09</li>
+                                                    <li class="aaaa">2014</li>
+                                                </ul>
+                                                <p class="media-comment">
+                                                    Thank you Guys!
+                                                </p>
+                                                <a class="btn btn-info btn-circle text-uppercase" href="#"
+                                                   id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="tab-pane" id="add-comment">
+                    <form action="#" method="post" class="form-horizontal" id="commentForm" role="form">
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Comment</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="addComment" id="addComment" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="uploadMedia" class="col-sm-2 control-label">Upload media</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <div class="input-group-addon">http://</div>
+                                    <input type="text" class="form-control" name="uploadMedia" id="uploadMedia">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-success btn-circle text-uppercase" type="submit"
+                                        id="submitComment"><span class="glyphicon glyphicon-send"></span> Summit comment
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="tab-pane" id="product-reviews">
+                    <form action="#" method="post" class="form-horizontal" id="accountSetForm" role="form">
+                        <div class="form-group">
+                            <label for="avatar" class="col-sm-2 control-label">Avatar</label>
+                            <div class="col-sm-10">
+                                <div class="custom-input-file">
+                                    <label class="uploadPhoto">
+                                        Edit
+                                        <input type="file" class="change-avatar" name="avatar" id="avatar">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Vilma palma">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button class="btn btn-primary btn-circle text-uppercase" type="submit" id="submit">Save
+                                    changes
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

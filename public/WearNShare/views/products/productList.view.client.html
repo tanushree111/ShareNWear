@@ -1,0 +1,115 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left leftnavs">
+            <a class="white-icon" href="#/">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="leftnavbran">WearNShare</span>
+            </a>
+        </div>
+        <div ng-show="!model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon" href="#/login">
+                <i class="fa fa-sign-in"></i>
+            </a>
+        </div>
+
+        <div ng-show="!model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon"  href="#/register">
+                <i class="fa fa-user-plus "></i>
+            </a>
+        </div>
+
+        <div ng-show="model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon" ng-click="model.logout()">
+                <i class="fa fa-sign-out"></i>
+            </a>
+        </div>
+        <div ng-show="model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon" href="#/user">
+                <i class="fa fa-user"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="custom-search-input" class="detail-search">
+        <h4>Not What You Want. God Gives Second Chances</h4>
+        <div class="input-group col-md-12">
+            <input type="text" ng-model="model.searchTerm" class="form-control"
+                   placeholder="Enter the dress type you wanna wear today SKIRT? DRESS?"/>
+            <span class="input-group-btn">
+                         <button class="btn btn-danger" type="button" ng-click="model.search()">
+                            <span class=" glyphicon glyphicon-search"></span>
+                         </button>
+            </span>
+        </div>
+    </div>
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="spinner-1"></span>
+    <div class="well well-sm">
+        <strong>Category Title</strong>
+        <div class="btn-group">
+            <span href="#" target="_self" id="list" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th-list"></span>List</span>
+
+            <span target="_self" href="#" id="grid" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-th"></span>Grid</span>
+        </div>
+    </div>
+    <div id="products" class="row list-group">
+        <div class="item card-box col-md-4 col-sm-6 col-xs-12 col-lg-4" ng-repeat="product in model.products">
+            <div class="thumbnail">
+                <a class="ebay" target="_blank" href="{{product.viewItemURL[0]}}">
+                    <img class="ebay-image" src="image/ebay.png">
+                </a>
+                <h4 class="box-header">{{product.title[0]}}</h4>
+                <h7>{{product.primaryCategory[0].categoryName[0]}}</h7>
+                <img class="group list-group-image img-size" ng-src="{{product.galleryURL[0]}}"/>
+                <div class="caption">
+                    <div class="ebay-price">
+                        <h5 class="group inner ebay-price-h5 list-group-item-heading"><b>Ebay Price:</b></h5>
+                        <p class="">{{product.sellingStatus[0]
+                            .convertedCurrentPrice[0].__value__}}<i class="fa fa-dollar"></i></p>
+                    </div>
+                </div>
+                <div class="row card-button">
+                    <div>
+                        <h3 class="group inner ebay-price-h4 list-group-item-heading">Why Buy If You Can Save</h3>
+                        <span>
+                            <a class="btn btn-primary" href="#/productDetail/{{product.itemId[0]}}">Wanna Know More?</a>
+                        </span>
+                       <!-- <span>
+                            <a class="btn btn-danger" href="#/productDetail/{{product.itemId[0]}}">Rent</a>
+                        </span>-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+
+        </div>
+    </div>
+</nav>
+<script>
+    $(document).ready(function () {
+        $('#list').click(function (event) {
+            event.preventDefault();
+            $('#products .item').addClass('list-group-item');
+        });
+        $('#grid').click(function (event) {
+            event.preventDefault();
+            $('#products .item').removeClass('list-group-item');
+            $('#products .item').addClass('grid-group-item');
+        });
+    });
+</script>

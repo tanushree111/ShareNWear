@@ -1,0 +1,31 @@
+<div class="reviewPanel" ng-show="model.showReview">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div>
+                <span ng-repeat="rating in ratings">{{rating.current}} out of {{rating.max}}
+                    <div star-rating rating-value="rating.current" max="rating.max"
+                                             on-rating-selected="getSelectedRating(rating)"></div>
+                </span>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone blue"></i></span>
+                    <input type="text" name="title" ng-model="model.review.title" placeholder="Title"
+                           class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
+                    <textarea name="desc" ng-model="model.review.description" rows="6" placeholder="Description"
+                              class="form-control" type="text" required></textarea>
+                </div>
+            </div>
+            <div>
+                <a ng-click="model.postProdReview(model.review)" class="btn btn-primary">Post</a>
+                <a class="btn btn-danger"
+                   ng-click="model.toggleShowReview(false)">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>

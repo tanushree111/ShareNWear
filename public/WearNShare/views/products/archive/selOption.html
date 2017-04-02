@@ -1,0 +1,66 @@
+<html lang="en" ng-app="selectDemoApp" id="top">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+
+</head>
+<body>
+<div role="main">
+    <div class="container">
+        <!-- Simple usage -->
+        <section id="simple-usage" ng-controller="SimpleUsageCtrl">
+            <h1>Simple usage</h1>
+
+            <div>
+                <h2>Works with ngIf</h2>
+                <div>Model value: <code>{{model || "''"}}</code></div>
+                <div>Show/Hide <input type="checkbox" ng-model="selectWithOptionsIsVisible"></div>
+
+                <div ng-if="selectWithOptionsIsVisible">
+                    <select class="dropup" selectpicker="{ dropupAuto: false }" ng-model="model" toggle-dropdown>
+                        <option value="">Select one</option>
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </select>
+                </div>
+
+                <h2>Works without ngIf</h2>
+                <div>Model value: <code>{{model || "''"}}</code></div>
+                <select selectpicker="" ng-model="model" toggle-dropdown>
+                    <option value="">Select one</option>
+                    <option>Mustard</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                </select>
+
+                <h2>Works with ngOptions</h2>
+                <div>Model value: <code>{{model || "''"}}</code></div>
+                <div>Colors: <code>{{colors | json}}</code></div>
+                <select selectpicker ng-model="model" ng-options="c as c for c in colors" toggle-dropdown>
+                    <option value="">Select one</option>
+                </select>
+
+                <h2>Works with ngRepeat</h2>
+                <div ng-repeat="select in repeater">
+                    <label>{{select.title}} {{model}}</label>
+                    <select selectpicker ng-model="$parent.model" ng-options="c as c for c in colors" toggle-dropdown>
+                        <option value="">Select one</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>

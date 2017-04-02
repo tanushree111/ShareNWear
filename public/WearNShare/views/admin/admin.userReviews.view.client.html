@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="panel panel-default widget">
+        <div class="panel-heading">
+            <span class="glyphicon glyphicon-comment"></span>
+            <h3 class="panel-title">
+                Recent Reviews</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="userRev in model.userReviews">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="col-md-6 col-xs-6">
+                                <h5>{{userRev.title}}</h5>
+                                <div class="mic-info">
+                                    By: <a href="#">{{userRev.by}}</a> on {{userRev.dateCreated}}
+                                </div>
+                            </div>
+                            <div class="comment-text col-md-4 col-xs-4">
+                                {{userRev.description}}
+                            </div>
+                            <div class="action col-md-2 col-xs-2 pull-right">
+                                <button type="button" ng-click="model.deleteUserReview(userRev._id)"
+                                        class="btn btn-danger" title="Delete">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+          <!--  <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span
+                    class="glyphicon glyphicon-refresh"></span> More</a>-->
+        </div>
+    </div>
+</div>

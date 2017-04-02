@@ -1,0 +1,176 @@
+<nav id="navbar-white" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <button href="#menu-toggle" class="slidebar-toggle" id="menu-toggle">
+            <span class="sr-only">Toggle sidebar</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <span><a class="navbar-brand" href="/">Filters</a></span>
+    </div>
+</nav>
+
+<div id="wrapper">
+    <!-- Sidebar -->
+    <div id="slidebar-white" class="slidebar-nav">
+        <nav id="navbar-white" class="navbar navbar-default filter-height" role="navigation">
+            <div class="filter-margin">
+                <form>
+                    <div class="form-group filter-form">
+                        <h5>Color</h5>
+                        <!-- Rounded TWO -->
+                        <div class="roundedTwo">
+                            <input class="filter-checkbox" type="checkbox" value="None" id="roundedTwo" name="check"/>
+                            <label for="roundedTwo"></label>
+                        </div>
+
+                        <div class="roundedTwo">
+                            <input class="filter-checkbox" type="checkbox" value="None" id="roundedTwo1" name="check"/>
+                            <label for="roundedTwo1"></label>
+                        </div>
+
+                        <div class="roundedTwo">
+                            <input class="filter-checkbox" type="checkbox" value="None" id="roundedTwo2" name="check"/>
+                            <label for="roundedTwo2"></label>
+                        </div>
+
+                        <div class="roundedTwo">
+                            <input class="filter-checkbox" type="checkbox" value="None" id="roundedTwo3" name="check"/>
+                            <label for="roundedTwo3"></label>
+                        </div>
+
+                        <div class="roundedTwo">
+                            <input class="filter-checkbox" type="checkbox" value="None" id="roundedTwo4" name="check"/>
+                            <label for="roundedTwo4"></label>
+                        </div>
+                    </div>
+                    <div class="form-group filter-form">
+                        <h5>Gender</h5>
+                        <select class="selectpicker form-control" data-width="200px">
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <h5>Size</h5>
+                        <select class="selectpicker form-control" data-width="200px">
+                            <option>Small</option>
+                            <option>Medium</option>
+                            <option>Large</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="dd.mm.yyyy" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                            <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                             </span>
+                        </p>
+
+
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="dd.mm.yyyy" ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                            </span>
+                        </p>
+                    </div>
+
+
+                </form>
+            </div>
+        </nav><!--/.navbar -->
+    </div><!--/.sidebar-nav -->
+
+
+    <main id="page-wrapper6">
+        <div class="controls">
+            <!--<label>Filter:</label>
+            <button class="filter" data-filter="all">All</button>
+            <button class="filter"
+                    data-filter=".category-{{category}}"
+                    ng-repeat="category in categories">{{category}}
+            </button>-->
+
+            <!-- <label>Sort:</label>-->
+            <button class="sort" data-sort="myorder:asc">Lowest Rating</button>
+            <button class="sort" data-sort="myorder:desc">Highest Rating</button>
+            <button class="sort" data-sort="myorder1:asc">Lowest Price</button>
+            <button class="sort" data-sort="myorder1:desc">Highest Price</button>
+        </div>
+        <div class="container-fluid" mixitup='mixitup' entities='drawings'>
+
+            <div class="mix category-{{drawing.category}} col-md-6 col-xs-12 col-sm-12 col-lg-6"
+                 data-myorder="{{drawing.value}}" data-myorder1="{{drawing.value}}" ng-repeat="drawing in drawings">
+                <div class="card hovereffect">
+
+                    <div class="card-block">
+                        <div class="text-xs-right">
+                            <img class="img-card" src="./image/like.png" alt="Card image cap">
+                            <h6 class="card-title">{{drawing.value}}</h6>
+                        </div>
+                        <h6 class="card-subtitle text-muted">Red Skirt Armani</h6>
+                    </div>
+                    <img class="card-img-top img-fluid" src="http://lorempixel.com/400/200/" alt="Card image cap">
+                    <div class="card-block">
+                        <p class="card-text">250$</p>
+                        <p class="card-text">
+                            <small class="text-muted">May 29,2016-June 31,2016</small>
+                        </p>
+                        <!--  <a href="#" class="btn btn-primary">Go somewhere</a>-->
+                    </div>
+                    <div class="overlay">
+                        <h2>Hover effect 1</h2>
+                        <a class="info" href="#">link here</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div><!-- /#wrapper -->
+
+<script>
+    $(document).ready(function () {
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        $('.selectpicker').selectpicker({
+            style: 'btn-info',
+            size: 4
+        });
+
+
+        $("#slider").slider({
+            animate: true,
+            value: 1,
+            min: 0,
+            max: 1000,
+            step: 10,
+            slide: function (event, ui) {
+                update(1, ui.value); //changed
+            }
+        });
+
+
+        update();
+
+        function update(slider, val) {
+            //changed. Now, directly take value from ui.value. if not set (initial, will use current value.)
+
+            //   var $duration = slider == 2?val:$("#duration").val();
+
+            /* commented
+             $amount = $( "#slider" ).slider( "value" );
+             $duration = $( "#slider2" ).slider( "value" );
+             */
+            debugger;
+            var amount = slider == 1 ? val : 10;
+            $('#slider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> ' + amount + ' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+        }
+
+    });
+</script>

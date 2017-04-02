@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">
+               <span class="leftnavbran">WearNShare</span>
+            </a>
+        </div>
+
+        <div class="navbar-text pull-right rightnavs">
+            <a class="white-icon" href="#/admin">
+                <i class="fa fa-lock"></i>
+            </a>
+        </div>
+
+        <div ng-show="!model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon" href="#/login">
+                <i class="fa fa-sign-in"></i>
+            </a>
+        </div>
+
+        <div ng-show="!model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon"  href="#/register">
+                <i class="fa fa-user-plus "></i>
+            </a>
+        </div>
+
+        <div ng-show="model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon" ng-click="model.logout()">
+                <i class="fa fa-sign-out"></i>
+            </a>
+        </div>
+        <div ng-show="model.userId" class="navbar-text pull-right rightnavs">
+            <a class="white-icon" href="#/user">
+                <i class="fa fa-user"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div style="width:100%;height:100%;overflow: hidden" class="container-fluid">
+    <img style="width:100%;height:100%"
+         src="https://cdn.homebnc.com/homeimg/2016/03/06-refined-closet-elegance-closet-storage-homebnc.jpg"
+         class="img-responsive">
+    <div id="custom-search-input" class="main-text">
+        <div class="input-group col-md-12">
+            <input type="text" ng-model="model.searchTerm" class="search-query form-control"
+                   placeholder="Enter the dress type you wanna wear today SKIRT? DRESS?"/>
+            <span class="input-group-btn">
+                         <button class="btn btn-danger" type="button" ng-click="model.search()">
+                            <span class=" glyphicon glyphicon-search"></span>
+                         </button>
+            </span>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+
+        </div>
+    </div>
+</nav>

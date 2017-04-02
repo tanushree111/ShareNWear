@@ -1,0 +1,94 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left leftnavs">
+            <a class="white-icon" href="#/products">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="leftnavbran">WearNShare</span>
+            </a>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="centernavs">Admin</span>
+            </a>
+        </div>
+
+        <div class="navbar-text pull-right rightnavs">
+            <a class="white-icon" ng-click="model.logout()">
+                <i class="fa fa-sign-out"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="twPc-divStats twPc-div">
+            <ul class="twPc-Arrange ">
+                <li class="twPc-ArrangeSizeFit col-md-4 col-xs-12">
+                    <span class="twPc-StatLabel twPc-block">Users</span>
+                    <span class="twPc-StatValue">{{model.usersCount}}</span>
+                </li>
+                <li class="twPc-ArrangeSizeFit col-md-4 col-xs-12">
+                    <span class="twPc-StatLabel twPc-block ">User Reviews</span>
+                    <span class="twPc-StatValue">{{model.userReviewCount}}</span>
+                </li>
+                <li class="twPc-ArrangeSizeFit col-md-4 col-xs-12">
+                    <span class="twPc-StatLabel twPc-block ">Product Reviews</span>
+                    <span class="twPc-StatValue">{{model.prodReviewCount}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr/>
+    <div class="wrapper row detail-tab-margin">
+        <div class="col-md-12 col-xs-12" id="logout">
+            <div class="comment-tabs">
+                <ul class="nav nav-pills" role="tablist">
+                    <li class="active col-md-3 col-xs-12">
+                        <a class="reviews text-capitalize">
+                            <span href="#users" role="tab" data-toggle="tab">Users</span>
+                        </a>
+                    </li>
+                    <li class="col-md-3 col-xs-12">
+                        <a class="reviews text-capitalize">
+                            <span href="#user-rev" role="tab" data-toggle="tab">User Reviews</span>
+                        </a>
+                    </li>
+                    <li class="col-md-3 col-xs-12">
+                        <a class="reviews text-capitalize">
+                            <span href="#prod-rev" role="tab" data-toggle="tab">Product Reviews</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <hr/>
+            <div class="tab-content">
+                <div class="tab-pane active" id="users">
+                    <div ng-include="'views/admin/admin.users.view.client.html'"></div>
+                </div>
+                <div class="tab-pane " id="prod-rev">
+                    <div ng-include="'views/admin/admin.prodReviews.view.client.html'"></div>
+                </div>
+
+                <div class="tab-pane " id="user-rev">
+                    <div ng-include="'views/admin/admin.userReviews.view.client.html'"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+
+        </div>
+    </div>
+</nav>

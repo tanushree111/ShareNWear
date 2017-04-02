@@ -1,0 +1,269 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left leftnavs">
+            <a class="white-icon" href="#/products">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="leftnavbran">WearNShare</span>
+            </a>
+        </div>
+
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <span class="centernavs">Seller</span>
+            </a>
+        </div>
+
+        <div class="navbar-text pull-right rightnavs">
+            <a class="white-icon" ng-click="model.logout()">
+                <i class="fa fa-sign-out"></i>
+            </a>
+        </div>
+
+        <div class="navbar-text pull-right rightnavs">
+            <a class="white-icon" href="#/user">
+                <i class="fa fa-user"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container pull-content-down">
+    <div ng-show="model.error" class="alert alert-danger" role="alert">
+        {{model.error}}
+    </div>
+
+    <div class="row">
+
+
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object dp img-circle"
+               ng-src="{{ model.seller.url || 'https://app.nimia.com/static/img/default_profile.png' }}"
+                     style="width: 150px;height:150px;">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{model.seller.firstName}} {{model.seller.lastName}} ({{model.seller.username}})</h4>
+                <h4>
+                    <small><i class="fa fa-map-marker"></i> {{model.seller.address}}</small>
+                </h4>
+                <h4>
+                    <small><i class="fa fa-envelope"></i> {{model.seller.email}}</small>
+                </h4>
+                <h4>
+                    <small><i class="fa fa-phone"></i> {{model.seller.phone}}</small>
+                </h4>
+
+                <h5>Member Since: <a href="http://gridle.in">{{model.seller.dateCreated | date: MMM/yyyy}}</a></h5>
+
+                <div>
+                    <button class="label1 label1-info" ng-click="model.addFollower()">Follow <i class="fa fa-heart"></i></button>
+                    <button class="label1 label1-info" ng-click="model.addLike()">Like <i class="fa fa-thumbs-up"></i></button>
+                    <button class="label1 label1-info" ng-click="model.toggleShowReview(true)">Rate <i class="fa fa-star"></i></button>
+                </div>
+
+                <div class="reviewPanel" ng-show="model.showReview">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+
+
+                            <div>
+                                <span ng-repeat="rating in ratings">{{rating.current}} out of {{rating.max}}
+
+                                        <div star-rating rating-value="rating.current" max="rating.max"
+                                             on-rating-selected="getSelectedRating(rating)"></div>
+                                </span>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone blue"></i></span>
+                                    <input type="text" name="title" ng-model="model.review.title" placeholder="Title" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
+                                    <textarea name="desc" ng-model="model.review.description" rows="6" placeholder="Description" class="form-control" type="text" required></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <a ng-click="model.postReview(model.review)" class="btn btn-primary">Post</a>
+                                <a class="btn btn-danger"
+                                   ng-click="model.toggleShowReview(false)">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+    <hr style="margin:8px auto">
+
+    <div class="row">
+        <ul class="nav nav-pills1 nav-justified" role="tablist">
+            <li class="active"><span href="#tabLent" role="tab" data-toggle="tab"><i class="fa fa-hand-o-left"></i> Other Products By Seller</span></li>
+            <li><span href="#tabRvw" data-toggle="tab"><i class="fa fa-star"></i> Reviews</span></li>
+            <li><span href="#tabFlw" data-toggle="tab"><i class="fa fa-heart"></i> Followers</span></li>
+            <li><span href="#tabLike" data-toggle="tab"><i class="fa fa-thumbs-up"></i> Likes</span></li>
+            <li><span href="#tabMsg" data-toggle="tab"><i class="fa fa-weixin"></i> Contact Seller</span></li>
+        </ul>
+
+        <div class="tab-content clearfix">
+            <div class="tab-pane active" id="tabLent">
+                <div class="row">
+
+                        <div class="row panel-table-margin list-group">
+                            <div class="item card-box col-md-3 col-sm-12 col-xs-12 col-lg-3"
+                                 ng-repeat="prod in model.otherProducts">
+                                <div class="thumbnail">
+                                    <a class="ebay" target="_blank" href="{{prod.ViewItemURLForNaturalSearch}}">
+                                        <img class="ebay-image" src="image/ebay.png">
+                                    </a>
+                                    <h4 class="box-header">{{prod.Title}}</h4>
+                                    <h7>{{prod.primaryCategoryName}}</h7>
+                                    <img class="group list-group-image image-rel-prod" ng-src="{{prod.PictureURL[0]}}"/>
+                                    <div class="row card-button">
+                                        <div>
+                                            <span>
+                                                <a class="btn btn-primary" href="#/productDetail/{{prod.ItemID}}">
+                                                    Details</a>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tabRvw">
+                <div class="panel-heading tabHead">
+                    <h3 class="panel-title">Seller Reviews</h3>
+                </div>
+                <div class="wrapper row panel-table-margin">
+                    <div class="col-sm-12 col-xs-12 col-md-3 col-lg-3" ng-repeat="review in model.sellerReviews">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                         <span itemscope>
+                                             <h3 class="panel-title">{{review.title}}</h3>
+                                         </span>
+                            </div>
+                            <div class="panel-body">
+                                <p>{{review.description}}</p>
+                                <span></span>
+                                <span>{{review.by}}</span>
+                                <span class ="pull-right">
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                        <span>{{review.dateCreated  | date: MMM/yyyy}}</span>
+                                        </span>
+
+                            </div>
+                            <div class="panel-footer clearfix">
+                                        <span class="pull-right">
+                                            <span class="reviewRating">
+                                                <meta content="1"><span itemprop="ratingValue">{{review.rating}}</span>
+                                                <span itemprop="bestRating">stars</span>
+                                            </span>
+                                                  <span ng-repeat="_ in ((_ = []) && (_.length=review.rating) && _) track by $index"
+                                                        class="glyphicon glyphicon-star"
+                                                        aria-hidden="true"></span>
+                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tabFlw">
+                <div class="panel-body">
+                    <ul class="list-group list-group-dividered list-group-full">
+                        <li ng-repeat="fol in model.seller.followers" class="list-group-item">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="avatar">
+                                        <img src="{{fol.url || 'https://app.nimia.com/static/img/default_profile.png'}}"
+                                             alt="">
+                                        <i></i>
+                                    </span>
+                                </div>
+                                <div class="media-body">
+                                    <div><span class="name">{{fol.firstName}} {{fol.lastName}}</span></div>
+                                    <small>{{fol.username}}</small>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tabLike">
+                <div class="panel-body">
+                    <ul class="list-group list-group-dividered list-group-full">
+                        <li ng-repeat="like in model.seller.likes" class="list-group-item">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="avatar">
+                                        <img src="{{like.url || 'https://app.nimia.com/static/img/default_profile.png'}}"
+                                             alt="">
+                                        <i></i>
+                                    </span>
+                                </div>
+                                <div class="media-body">
+                                    <div><span class="name">{{like.firstName}} {{like.lastName}}</span></div>
+                                    <small>{{like.username}}</small>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tabMsg">
+                    <div class="col-sm-6 col-centered">
+                        <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope blue"></i></span>
+                                            <input type="email" name="email" ng-model="model.message.byEmail" placeholder="Email" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone blue"></i></span>
+                                            <input type="text" name="subject" ng-model="model.message.subject" placeholder="Subject" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
+                                            <textarea name="msg" ng-model="model.message.description" rows="6" placeholder="Description" class="form-control" type="text" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button ng-click="model.sendMessage(model.message)" class="btn btn-info pull-right">Send <span class="glyphicon glyphicon-send"></span></button>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text">
+
+        </div>
+    </div>
+</nav>

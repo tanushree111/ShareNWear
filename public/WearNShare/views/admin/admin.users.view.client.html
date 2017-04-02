@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading c-list">
+        <span class="title">Users</span>
+    </div>
+    <ul class="list-group col-md-12" id="contact-list">
+        <li ng-show="!model.users.length">No Users Found</li>
+        <li class="list-group-item" ng-repeat="user in model.users">
+            <div class="col-md-1">
+                <img src="{{user.url || 'https://app.nimia.com/static/img/default_profile.png'}}"/>
+            </div>
+            <div class="col-md-8">
+                <span class="name">{{user.lastName}}&nbsp{{user.lastName}}</span><br/>
+                <span class="glyphicon glyphicon-envelope text-muted c-info" data-toggle="tooltip"
+                      title="scott.stevens@example.com"></span>
+                <span class="text-muted">{{user.email}}</span><br/>
+                <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip"
+                      title="(870) 288-4149"></span><br>
+                <span class="text-muted">{{user.phone}}</span>
+            </div>
+            <div class="col-md-3">
+                <button ng-click="model.deleteUser(user._id)" class="btn btn-primary" type="button">Delete</button>
+            <!--    <button class="btn btn-primary" type="button">Update</button>-->
+            </div>
+            <div class="clearfix"></div>
+        </li>
+    </ul>
+</div>
