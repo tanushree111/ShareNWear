@@ -20,12 +20,12 @@
         }
 
         function findUserReviewByUserId(userId) {
-            var url = "/api/user/"+userId+"/userReviewBy";
+            var url = "/api/userReview/userReviewBy/"+userId;
             return $http.get(url);
         }
 
         function findUserReviewForUserId(userId) {
-            var url = "/api/user/"+userId+"/userReviewFor";
+            var url = "/api/userReview/userReviewFor/"+userId;
             return $http.get(url);
         }
 

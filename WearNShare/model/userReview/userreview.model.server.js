@@ -29,7 +29,7 @@ module.exports = function (connection) {
          });*/
 
         return connection.query({
-            sql: 'DELETE INTO UserReviews  WHERE `providedBy` = ? AND `receivedFor` = ?`',
+            sql: 'DELETE FROM UserReviews  WHERE `providedBy` = ? AND `receivedFor` = ?`',
             timeout: 40000, // 40s
             values: [reviewId, reviewId]
         });
@@ -43,7 +43,7 @@ module.exports = function (connection) {
         //return UserReviewModel.find(userId).populate("websites", "name").exec();
 
         return connection.query({
-            sql: 'SELECT * FROM `UserReviews` WHERE `providedBy` = ?',
+            sql: 'SELECT * FROM `UserReviews` ur inner join `Users` u WHERE ur.reviewer = u.id and `reviewer` = ?',
             timeout: 40000, // 40s
             values: [userId]
         });
@@ -57,7 +57,7 @@ module.exports = function (connection) {
          .exec();*/
 
         return connection.query({
-            sql: 'SELECT * FROM `UserReviews` WHERE `receivedFor` = ?',
+            sql: 'SELECT * FROM `UserReviews` ur inner join `Users` u WHERE ur.reviewFor = u.id and `reviewFor` = ?',
             timeout: 40000, // 40s
             values: [userId]
         });

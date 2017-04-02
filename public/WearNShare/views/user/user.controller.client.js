@@ -99,13 +99,31 @@
                 .error(function () {
                     vm.error = "Unable to fetch inbox messages";
                 });
-            /*
+
             MessageService.findMessageByUserId(vm.userId)
                 .success(function (msgs) {
                     vm.sent = msgs;
+                })
                 .error(function () {
                     vm.error = "Unable to fetch sent messages";
                 });
+
+            UserReviewService.findUserReviewForUserId(vm.userId)
+                .success(function (reviews) {
+                    vm.forReviews = reviews;
+                })
+                .error(function () {
+                    vm.error = "Unable to fetch reviews on you";
+                });
+            UserReviewService.findUserReviewByUserId(vm.userId)
+                .success(function (reviews) {
+                    vm.byReviews = reviews;
+                })
+                .error(function () {
+                    vm.error = "Unable to fetch reviews by you";
+                });
+
+                /*
             RentalService.findRentalsByLender(vm.userId)
                 .success(function (lents) {
                     vm.lents = lents;
@@ -120,20 +138,7 @@
                 .error(function () {
                     vm.error = "Unable to fetch other items rented by you";
                 });
-            UserReviewService.findUserReviewForUserId(vm.userId)
-                .success(function (reviews) {
-                    vm.forReviews = reviews;
-                })
-                .error(function () {
-                    vm.error = "Unable to fetch reviews on you";
-                });
-            UserReviewService.findUserReviewByUserId(vm.userId)
-                .success(function (reviews) {
-                    vm.byReviews = reviews;
-                })
-                .error(function () {
-                    vm.error = "Unable to fetch reviews by you";
-                });*/
+           */
         }
         init();
 

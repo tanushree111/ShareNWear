@@ -111,27 +111,30 @@ module.exports = function (app, model) {
 
     function findUserById(req, res) {
         var userId = req.params.uid;
-        model
-            .userModel
-            .findUserById(userId)
-            .then(
-                function (users) {
-                    if (users.length != 0) {
-                        res.send(users[0]);
-                    } else {
-                        res.send('0');
-                    }
-                },
-                function (error) {
-                    res.sendStatus(400).send(error);
+        var userObj;
+        model.userModel.findUserById(userId)
+            .then(function(users){
+                if (users.length == 0) {
+                    res.send('0');
                 }
-            );
+                userObj = users[0];
+                return model.userModel.findLikesForUserById(userId);
+            })
+            .then(function(likes){
+                userObj.likes = likes;
+                return model.userModel.findFollowersForUserById(userId);
+            })
+            .then(function(followers){
+                userObj.followers = followers;
+                res.send(userObj);
+            })
+            .catch(function(error){
+                res.sendStatus(400).send(error);
+            })
     }
 
     function createUser(req, res) {
         var user = req.body;
-        /*user._id = (new Date()).getTime().toString();
-         users.push(user);*/
         model
             .userModel
             .createUser(user)
@@ -148,12 +151,6 @@ module.exports = function (app, model) {
     function updateUser(req, res) {
         var user = req.body;
         var uid = req.params.uid;
-        /*for(var u in users){
-         if(users[u]._id === uid){
-         users[u] = user;
-         }
-         }
-         res.send(200);*/
         model
             .userModel
             .updateUser(uid, user)

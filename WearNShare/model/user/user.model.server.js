@@ -8,16 +8,20 @@ module.exports = function (connection) {
         findUserByCredentials: findUserByCredentials,
         findUserByUsername: findUserByUsername,
         deleteUser: deleteUser,
-        // findFollowersByUserId: findFollowersByUserId,
-        // findLikesByUserId: findLikesByUserId,
         addFollowersForUserId: addFollowersForUserId,
-        addLikesForUserId: addLikesForUserId
+        addLikesForUserId: addLikesForUserId,
+        findLikesForUserById:findLikesForUserById,
+        findFollowersForUserById:findFollowersForUserById
     };
     return api;
 
 
     function findAllUser() {
-        //return UserModel.find();
+        return connection.query({
+            sql: 'SELECT * FROM `Users`',
+            timeout: 60000, // 40s
+           // values: [userId]
+        })
     }
 
     function createUser(user) {
@@ -26,15 +30,11 @@ module.exports = function (connection) {
     }
 
     function findUserById(userId) {
-        /* return UserModel.findById(userId)
-         .populate("followers", "username firstName lastName url")
-         .populate("likes", "username firstName lastName url")
-         .exec(); //--- returns an object*/
         return connection.query({
             sql: 'SELECT * FROM `Users` WHERE `id` = ?',
             timeout: 40000, // 40s
             values: [userId]
-        });
+        })
 
     }
 
@@ -91,18 +91,6 @@ module.exports = function (connection) {
          });*/
     }
 
-    function findUserByFacebookId(facebookId) {
-        // return UserModel.findOne({'facebook.id': facebookId});
-    }
-
-    /*function findFollowersByUserId(userId) {
-     return UserModel.findById(userId).populate("followers", "username firstName lastName").exec();
-     }
-
-     function findLikesByUserId(userId) {
-     return UserModel.findById(userId).populate("likes", "username firstName lastName").exec();
-     }*/
-
     function addFollowersForUserId(userId, sellerId) {
         /* return UserModel
          .findById(sellerId)
@@ -121,4 +109,19 @@ module.exports = function (connection) {
          });*/
     }
 
+    function findLikesForUserById(userId) {
+        return connection.query({
+            sql: 'SELECT * FROM `likes` l inner join `users` u WHERE l.likedBy = u.id and l.likes = ?',
+            timeout: 40000, // 40s
+            values: [userId]
+        });
+    }
+
+    function findFollowersForUserById(userId) {
+        return connection.query({
+            sql: 'SELECT * FROM `follows` f inner join `users` u WHERE f.followedBy = u.id and f.follows = ?',
+            timeout: 40000, // 40s
+            values: [userId]
+        });
+    }
 };

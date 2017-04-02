@@ -1,9 +1,9 @@
 module.exports = function (app, model) {
 
     app.post('/api/userReview', createUserReview);
-    app.get('/api/user/:userId/userReviewBy', findUserReviewByUserId);
-    app.get('/api/user/:userId/userReviewFor', findUserReviewForUserId);
-    app.get('/api/userReview/all', findAllUsertReview);;
+    app.get('/api/userReview/userReviewBy/:userId', findUserReviewByUserId);
+    app.get('/api/userReview/userReviewFor/:userId', findUserReviewForUserId);
+    app.get('/api/userReview/all', findAllUserReview);;
     app.delete('/api/userReview/:reviewId', deleteUserReview);
 
     function findUserReviewByUserId(req, res) {
@@ -25,7 +25,7 @@ module.exports = function (app, model) {
             );
     }
 
-    function findAllUsertReview(req, res) {
+    function findAllUserReview(req, res) {
         model
             .userReviewModel
             .findAllUserReview()
@@ -95,6 +95,4 @@ module.exports = function (app, model) {
                 }
             );
     }
-
-
-}
+};
