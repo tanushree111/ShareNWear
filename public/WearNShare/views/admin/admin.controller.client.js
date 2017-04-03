@@ -91,7 +91,7 @@
                 .logout()
                 .then(
                     function (response) {
-                        $rootScope.currentUser = null;
+                        //$rootScope.currentUser = null;
                         $location.url("/");
                     });
         }

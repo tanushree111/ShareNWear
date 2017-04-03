@@ -14,14 +14,10 @@ module.exports = function (connection) {
     }
 
     function deleteMessage(msgId) {
-        return connection.query('DELETE INTO Messages  WHERE `id` = ?', msg);
+        return connection.query('DELETE FROM Messages  WHERE `id` = ?', msg);
     }
 
     function findMessageByUserId(userId) {
-        /*return MessageModel.find({'by': userId})
-         .populate("by", "username firstName lastName url")
-         .populate("for", "username firstName lastName url")
-         .exec();;*/
         return connection.query({
             sql: 'SELECT * FROM `Messages` m inner join `Users` u where m.sender = u.id and m.sender = ?',
             timeout: 40000, // 40s

@@ -70,7 +70,7 @@ module.exports = function (app, model) {
             .userReviewModel
             .createUserReview(review)
             .then(
-                function (newReview) {
+                function (status) {
                     res.sendStatus(200);
                 },
                 function (error) {
@@ -88,10 +88,10 @@ module.exports = function (app, model) {
             .deleteUserReview(rid)
             .then(
                 function (status) {
-                    res.sendStatus(200);
+                    res.send(200);
                 },
                 function (error) {
-                    res.sendStatus(400).send(error);
+                    res.send(error);
                 }
             );
     }

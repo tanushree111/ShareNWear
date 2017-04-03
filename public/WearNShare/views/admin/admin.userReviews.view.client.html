@@ -13,14 +13,14 @@
                             <div class="col-md-6 col-xs-6">
                                 <h5>{{userRev.title}}</h5>
                                 <div class="mic-info">
-                                    By: <a href="#">{{userRev.by}}</a> on {{userRev.dateCreated}}
+                                    By: <a href="#">{{userRev.reviewer}}</a> on {{userRev.dateCreated}}
                                 </div>
                             </div>
                             <div class="comment-text col-md-4 col-xs-4">
                                 {{userRev.description}}
                             </div>
                             <div class="action col-md-2 col-xs-2 pull-right">
-                                <button type="button" ng-click="model.deleteUserReview(userRev._id)"
+                                <button type="button" ng-click="model.deleteUserReview(userRev.id)"
                                         class="btn btn-danger" title="Delete">
                                     <span class="glyphicon glyphicon-trash"></span>
                                 </button>

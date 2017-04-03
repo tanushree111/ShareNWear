@@ -100,13 +100,6 @@ module.exports = function (app, model) {
                     res.sendStatus(400).send(error);
                 }
             );
-        /*for(var u in users){
-         if(users[u].username === username && users[u].password === password){
-         res.send(users[u]);
-         return;
-         }
-         }
-         res.send(0);*/
     }
 
     function findUserById(req, res) {
@@ -129,7 +122,7 @@ module.exports = function (app, model) {
                 res.send(userObj);
             })
             .catch(function(error){
-                res.sendStatus(400).send(error);
+                res.send(400);
             })
     }
 
@@ -191,7 +184,7 @@ module.exports = function (app, model) {
                     res.sendStatus(200);
                 },
                 function (error) {
-                    res.sendStatus(400).send(error);
+                    res.send(error);
                 }
             );
     }
@@ -296,7 +289,7 @@ function checkAdmin(req, res) {
     var loggedIn = req.isAuthenticated();
     var isAdmin = false;
     if (req.user != undefined) {
-        isAdmin = req.user.role == "ADMIN";
+        isAdmin = req.user.userRole == "ADMIN";
     }
     if (loggedIn && isAdmin) {
         res.json(req.user);
@@ -321,12 +314,12 @@ function uploadImage(req, res) {
             .userModel
             .findUserById(userId)
             .then(
-                function (user) {
-                    if (user) {
-                        user.url = '/WearNShare/uploads/' + filename;
+                function (users) {
+                    if (users.length != 0) {
+                        users[0].url = '/WearNShare/uploads/' + filename;
                         model
                             .userModel
-                            .updateUser(userId, user)
+                            .updateUser(userId, users[0])
                             .then(
                                 function (status) {
                                     url = '../WearNShare/index.html#/user';

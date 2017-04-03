@@ -22,7 +22,7 @@
                         function (response) {
                             var user = response.data;
                             $rootScope.currentUser = user;
-                            if($rootScope.currentUser.role=="ADMIN"){
+                            if($rootScope.currentUser.userRole=="ADMIN"){
                                 $location.url("/admin");
                             }
                             else{
@@ -169,8 +169,7 @@
 
     function ProfileEditController($location, $routeParams, $rootScope, UserService) {
         var vm = this;
-        vm.userId = $rootScope.currentUser._id;
-        ;
+        vm.userId = $rootScope.currentUser.id;
         vm.updateUser = updateUser;
         vm.logout = logout;
         function init() {
@@ -279,8 +278,8 @@
         }
 
         function postReview(review) {
-            review.by = vm.userId;
-            review.for = vm.sellerId;
+            review.reviewer = vm.userId;
+            review.reviewFor = vm.sellerId;
             review.rating = vm.rating;
             UserReviewService
                 .createUserReview(review)
@@ -293,8 +292,8 @@
         }
 
         function sendMessage(message) {
-            message.by = vm.userId;
-            message.for = vm.sellerId;
+            message.sender = vm.userId;
+            message.receiver = vm.sellerId;
             MessageService
                 .createMessage(message)
                 .success(function () {

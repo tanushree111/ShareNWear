@@ -10,8 +10,8 @@ module.exports = function (connection) {
         deleteUser: deleteUser,
         addFollowersForUserId: addFollowersForUserId,
         addLikesForUserId: addLikesForUserId,
-        findLikesForUserById:findLikesForUserById,
-        findFollowersForUserById:findFollowersForUserById
+        findLikesForUserById: findLikesForUserById,
+        findFollowersForUserById: findFollowersForUserById
     };
     return api;
 
@@ -19,8 +19,7 @@ module.exports = function (connection) {
     function findAllUser() {
         return connection.query({
             sql: 'SELECT * FROM `Users`',
-            timeout: 60000, // 40s
-           // values: [userId]
+            timeout: 60000
         })
     }
 
@@ -35,33 +34,9 @@ module.exports = function (connection) {
             timeout: 40000, // 40s
             values: [userId]
         })
-
-    }
-
-    function findUserByCredentials(username, password) {
-        /* return UserModel.find( //use alternatively findOne
-         {
-         username: username,
-         password: password
-         });*/
     }
 
     function findUserByUsername(username) {
-
-        /* return new Promise(function (resolve, reject) {
-         connection.query({
-         sql: 'SELECT * FROM `Users` WHERE `username` = ?',
-         timeout: 40000, // 40s
-         values: [username]
-         }, function (error, results, fields) {
-         if (error) {
-         console.log(error);
-         reject(error);
-         }
-         resolve(results);
-         });
-         });*/
-
         return connection.query({
             sql: 'SELECT * FROM `Users` WHERE `username` = ?',
             timeout: 40000, // 40s
@@ -70,43 +45,46 @@ module.exports = function (connection) {
     }
 
     function updateUser(userId, user) {
-        /* return UserModel.update(
-         {
-         _id: userId
-         },
-         {
-         firstName: user.firstName,
-         lastName: user.lastName,
-         email: user.email,
-         phone: user.phone,
-         address: user.address,
-         url: user.url
-         });*/
+        var newUpdate = {
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            phone: user.phone,
+            address: user.address,
+            url: user.url
+        };
+        return connection.query({
+            sql: 'UPDATE `Users` SET ? WHERE id = ?',
+            timeout: 40000, // 40s
+            values: [newUpdate, userId]
+        })
+    }
+
+    // Might need it later. Currently taken care by findById
+    function findUserByCredentials(username, password) {
+        console.log("findUserByCredentials : Should not be called in this release")
     }
 
     function deleteUser(userId) {
-        /* return UserModel.remove(
-         {
-         _id: userId
-         });*/
+        return connection.query({
+            sql: 'DELETE FROM `Users` WHERE id = ?',
+            timeout: 40000,
+            values: [userId]
+        })
     }
 
     function addFollowersForUserId(userId, sellerId) {
-        /* return UserModel
-         .findById(sellerId)
-         .then(function(user){
-         user.followers.push(userId);
-         user.save();
-         });*/
+        var follows = {};
+        follows.followedBy = userId;
+        follows.follows = sellerId;
+        return connection.query('INSERT INTO follows SET ?', follows);
     }
 
     function addLikesForUserId(userId, sellerId) {
-        /* return UserModel
-         .findById(sellerId)
-         .then(function(user){
-         user.likes.push(userId);
-         user.save();
-         });*/
+        var likes = {};
+        likes.likedBy = userId;
+        likes.likes = sellerId;
+        return connection.query('INSERT INTO likes SET ?', likes);
     }
 
     function findLikesForUserById(userId) {
@@ -124,4 +102,5 @@ module.exports = function (connection) {
             values: [userId]
         });
     }
+
 };

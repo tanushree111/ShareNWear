@@ -9,7 +9,7 @@ module.exports = function (connection) {
     };
     return api;
 
-    function findAllProductReview(productId) {
+    function findAllProductReview() {
         return connection.query({
             sql: 'SELECT * FROM `ProductReviews`',
             timeout: 40000 // 40s
@@ -36,7 +36,7 @@ module.exports = function (connection) {
         });
     }
 
-    function findReviewsByProduct(userId) {
+    function findReviewsByProduct(productId) {
         return connection.query({
             sql: 'SELECT * FROM `ProductReviews` WHERE `productId` = ?',
             timeout: 40000, // 40s

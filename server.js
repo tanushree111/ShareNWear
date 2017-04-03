@@ -36,10 +36,12 @@ return mysql.createConnection({
     var userModel = require("./WearNShare/model/user/user.model.server")(connection);
     var messageModel = require("./WearNShare/model/message/message.model.server")(connection);
     var userReviewModel = require("./WearNShare/model/userReview/userreview.model.server")(connection);
+    var productReviewModel = require("./WearNShare/model/productReview/productreview.model.server")(connection);
     var model = {
         userModel: userModel,
         messageModel: messageModel,
-        userReviewModel: userReviewModel
+        userReviewModel: userReviewModel,
+        productReviewModel:productReviewModel
     };
     require("./WearNShare/app.js")(app, model);
     app.set('ipaddress', (process.env.IP));
