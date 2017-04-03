@@ -90,9 +90,9 @@ module.exports = function (app, model) {
             .findProductByExtIdSize(lending.extId, lending.size)
             .then(
                 function (product) {
-                    if (product.size > 0) {
+                    if (product.length > 0) {
                         // Product already exists
-                        lending.productId = product.id;
+                        lending.productId = product[0].id;
                         model
                             .lendingModel
                             .createLending(lending)

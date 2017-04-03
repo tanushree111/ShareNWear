@@ -13,13 +13,10 @@ module.exports = function (connection) {
 
     function createLending(lending) {
         var newLending = {
-            lender: lending.lender,
+            lender: lending.lender.id,
             productId: lending.productId,
             price: lending.price,
-            quantity: lending.quantity,
-            availableFrom: lending.availableFrom,
-            availableTo: lending.availableTo,
-            available: lending.available
+            quantity: lending.quantity
         };
         return connection.query('INSERT INTO Lendings SET ?', newLending);
     }
