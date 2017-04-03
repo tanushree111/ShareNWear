@@ -33,7 +33,8 @@ module.exports = function (connection) {
 
     function findRentalsForRenter(userId) {
         return connection.query({
-            sql: 'SELECT * FROM `Rentals` WHERE `renter` = ?',
+            sql: 'SELECT r.lender, r.productId, r.renter, l.price, p.size FROM `Rentals` r,`Lendings` l,`Products` p WHERE ' +
+            'r.lender = l.lender AND r.productId = l.productId AND r.productId = p.id AND r.renter = ?',
             timeout: 40000, // 40s
             values: [userId]
         });

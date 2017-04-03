@@ -90,57 +90,66 @@ module.exports = function (app, model) {
             .findProductByExtIdSize(lending.extId, lending.size)
             .then(
                 function (product) {
-                    // Product already exists
-                    lending.id = product.id;
-                    model
-                        .lendingModel
-                        .createLending(lending)
-                        .then(
-                            function (newLending) {
-                                //
-                                //
-                                res.sendStatus(200);
-                            },
-                            function (error) {
-                                res.sendStatus(400).send(error);
-                            }
-                        );
+                    if (product.size > 0) {
+                        // Product already exists
+                        lending.productId = product.id;
+                        model
+                            .lendingModel
+                            .createLending(lending)
+                            .then(
+                                function (newLending) {
+                                    //
+                                    //
+                                    res.sendStatus(200);
+                                },
+                                function (error) {
+                                    res.sendStatus(400).send(error);
+                                }
+                            );
+                    } else {
+                        var product = {};
+                        product.name = lending.name;
+                        product.description = lending.description;
+                        product.category = lending.category;
+                        product.extId = lending.extId;
+                        product.size = lending.size;
+
+                        model
+                            .productModel
+                            .createProduct(product)
+                            .then(
+                                function (newProduct) {
+                                    if (newProduct) {
+
+                                        // Product created before lending creation
+                                        lending.productId = newProduct.insertId;
+                                        model
+                                            .lendingModel
+                                            .createLending(lending)
+                                            .then(
+                                                function (newLending) {
+                                                    //
+                                                    //
+                                                    res.sendStatus(200);
+                                                },
+                                                function (error) {
+                                                    res.sendStatus(400).send(error);
+                                                }
+                                            );
+                                    } else {
+                                        res.sendStatus(400).send(error);
+                                    }
+
+                                },
+                                function (error) {
+                                    res.sendStatus(400).send(error);
+                                }
+                            );
+                    }
 
                 },
                 function (error) {
-                    var product = {};
-                    product.name = lending.name;
-                    product.description = lending.description;
-                    product.category = lending.category;
-                    product.extId = lending.extId;
-                    product.size = lending.size;
-
-                    model
-                        .productModel
-                        .createProduct(product)
-                        .then(
-                            function (newProduct) {
-                                // Product created before lending creation
-                                lending.id = newProduct.id;
-                                model
-                                    .lendingModel
-                                    .createLending(lending)
-                                    .then(
-                                        function (newLending) {
-                                            //
-                                            //
-                                            res.sendStatus(200);
-                                        },
-                                        function (error) {
-                                            res.sendStatus(400).send(error);
-                                        }
-                                    );
-
-                            },
-                            function (error) {
-                                res.sendStatus(400).send(error);
-                            }
-                        );
+                    res.sendStatus(400).send(error);
                 }
             );
 

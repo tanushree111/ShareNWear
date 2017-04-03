@@ -108,8 +108,10 @@
             lending.size = vm.selectedOption;
             lending.price = vm.price;
             lending.quantity = 1;
-            lending.availableFrom = new Date();
-            lending.availableTo = lending.availableFrom.getDate() + 15;
+            var dateToday = new Date();
+            lending.availableFrom = dateToday;
+            dateToday.setDate(dateToday.getDate() +  15);
+            lending.availableTo = dateToday;
             lending.lender = $rootScope.currentUser;
             if (lending.availableFrom > lending.availableTo) {
                 vm.error = "Invalid date range";
@@ -137,9 +139,11 @@
             rental.lender = lending.lender;
             rental.productId = lending.productId;
             rental.rentedQty = 1;
-            rental.rentedFrom = new Date();
-            rental.rentedTo = rental.rentedFrom.getDate() + 5;
-            rental.renter = $rootScope.currentUser;
+            var dateToday = new Date();
+            rental.rentedFrom = dateToday;
+            dateToday.setDate(dateToday.getDate() +  10);
+            rental.rentedTo = dateToday;
+            rental.renter = $rootScope.currentUser.id;
             if (rental.rentedFrom < lending.availableFrom || rental.rentedFrom > lending.availableTo
                 || rental.rentedTo < lending.availableFrom || rental.rentedTo > lending.availableTo
                 || rental.rentedFrom > rental.rentedTo) {
