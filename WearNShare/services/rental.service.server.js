@@ -2,11 +2,10 @@ module.exports = function(app, model) {
 
     app.post('/api/rental', createRental);
     app.get('/api/lender/:userId/rental', findRentalsByLender);
-    app.get('/api/renter/:userId/rental', findRentalsByRenter);
+    app.get('/api/renter/:userId/rental', findRentalsForRenter);
     app.get('/api/product/:productId/size/:size/rental', findRentalsByProduct);
-    app.get('/api/rental/:rentalId', findRentalById);
-    app.put('/api/rental/:rentalId', updateRental);
-    app.delete('/api/rental/:rentalId', deleteRental);
+    app.get('/api/rental/lender/:lenderId/product/:productId/renter/:renterId', findRental);
+    app.delete('/api/rental/lender/:lenderId/product/:productId/renter/:renterId', deleteRental);
 
     function findRentalsByLender(req, res){
         var userId = req.params.userId;
@@ -27,11 +26,11 @@ module.exports = function(app, model) {
             );
     }
 
-    function findRentalsByRenter(req, res){
+    function findRentalsForRenter(req, res){
         var userId = req.params.userId;
         model
             .rentalModel
-            .findRentalsByRenter(userId)
+            .findRentalsForRenter(userId)
             .then(
                 function(rentals){
                     if(rentals) {
@@ -50,12 +49,28 @@ module.exports = function(app, model) {
         var pid = req.params.productId;
         var size = req.params.size;
         model
-            .rentalModel
-            .findRentalsByProduct(pid, size)
+            .productModel
+            .findProductByExtIdSize(pid, size)
             .then(
-                function(rentals){
-                    if(rentals) {
-                        res.json(rentals);
+                function(product){
+                    if(product) {
+                        // call rental with product id
+                        model
+                            .rentalModel
+                            .findRentalsByProduct(product.id)
+                            .then(
+                                function(rentals){
+                                    if(rentals) {
+                                        res.json(rentals);
+                                    }else{
+                                        res.send('0');
+                                    }
+                                },
+                                function(error){
+                                    res.sendStatus(400).send(error);
+                                }
+                            );
+                        //
                     }else{
                         res.send('0');
                     }
@@ -66,11 +81,14 @@ module.exports = function(app, model) {
             );
     }
 
-    function findRentalById(req, res){
-        var rid = req.params.rentalId;
+    function findRental(req, res){
+        var lid = req.params.lenderId;
+        var pid = req.params.productId;
+        var rid = req.params.renterId;
+
         model
             .rentalModel
-            .findRentalById(rid)
+            .findRental(lid,pid,rid)
             .then(
                 function(rental){
                     if(rental) {
@@ -101,28 +119,13 @@ module.exports = function(app, model) {
 
     }
 
-    function updateRental(req, res){
-        var rental = req.body;
-        var rid = req.params.rentalId;
-        model
-            .rentalModel
-            .updateRental(rid, rental)
-            .then(
-                function(status){
-                    res.sendStatus(200);
-                },
-                function(error){
-                    res.sendStatus(400).send(error);
-                }
-            );
-    }
-
-
     function deleteRental(req, res){
-        var rid = req.params.rentalId;
+        var lid = req.params.lenderId;
+        var pid = req.params.productId;
+        var rid = req.params.renterId;
         model
             .rentalModel
-            .deleteRental(rid)
+            .deleteRental(lid,pid,rid)
             .then(
                 function(status){
                     res.sendStatus(200);

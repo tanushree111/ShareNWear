@@ -80,7 +80,7 @@
         }
     }
 
-    function ProfileController($location, $routeParams, $rootScope, UserService, RentalService, UserReviewService, MessageService) {
+    function ProfileController($location, $routeParams, $rootScope, UserService, RentalService, LendingService, UserReviewService, MessageService) {
         var vm = this;
         vm.userId = $rootScope.currentUser.id;
         vm.logout = logout;
@@ -123,22 +123,20 @@
                     vm.error = "Unable to fetch reviews by you";
                 });
 
-                /*
-            RentalService.findRentalsByLender(vm.userId)
+            LendingService.findLendingsByLender(vm.userId)
                 .success(function (lents) {
                     vm.lents = lents;
                 })
                 .error(function () {
                     vm.error = "Unable to fetch other items lent by you";
                 });
-            RentalService.findRentalsByRenter(vm.userId)
+            RentalService.findRentalsForRenter(vm.userId)
                 .success(function (rents) {
                     vm.rents = rents;
                 })
                 .error(function () {
                     vm.error = "Unable to fetch other items rented by you";
                 });
-           */
         }
         init();
 
@@ -209,7 +207,7 @@
 
     }
 
-    function SellerProfileController($location, $route, $routeParams, $rootScope, UserService, UserReviewService, RentalService, MessageService, $scope, ebayService) {
+    function SellerProfileController($location, $route, $routeParams, $rootScope, UserService, UserReviewService, RentalService, LendingService, MessageService, $scope, ebayService) {
         var vm = this;
         vm.userId = $routeParams['uid'];
         vm.sellerId = $routeParams['sid'];
@@ -315,13 +313,13 @@
         }
 
         function getOtherProducts() {
-            RentalService.findRentalsByLender(vm.sellerId)
+            LendingService.findLendingsByLender(vm.sellerId)
                 .success(function (lents) {
                     vm.lents = lents;
                     if(lents){
                         for(i in lents){
                             if(lents[i].available){
-                                ebayService.getProductDetail(lents[i].productId)
+                                ebayService.getProductDetail(lents[i].extId)
                                     .then(function (product) {
                                             vm.otherProducts.push(product.Item);
                                         },

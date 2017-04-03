@@ -4,7 +4,7 @@
         .controller("ProductDetailController", ProductDetailController);
 
 
-    function ProductDetailController($location, $route, $routeParams, ebayService, ProductReviewService, UserService, $sce, RentalService, $rootScope, $scope) {
+    function ProductDetailController($location, $route, $routeParams, ebayService, ProductReviewService, UserService, $sce, RentalService, LendingService, $rootScope, $scope) {
         var vm = this;
         vm.sizes = ['Small', 'Medium', 'Large'];
         vm.elementId = $routeParams["eid"];
@@ -18,9 +18,10 @@
         vm.init = init;
         vm.alerts = [];
         vm.toggleShowReview = toggleShowReview;
+        vm.createLending = createLending;
         vm.createRental = createRental;
-        vm.updateRental = updateRental;
         vm.findRentalsByProduct = findRentalsByProduct;
+        vm.findLendingsByProduct = findLendingsByProduct;
         vm.addAlert = addAlert;
         vm.postProdReview = postProdReview;
         vm.getProductReviews = getProductReviews;
@@ -98,12 +99,53 @@
                     })
         }
 
-        function createRental() {
+        function createLending() {
+            var lending = {};
+            lending.extId = vm.productDetail.ItemID;
+            lending.name = vm.productDetail.Title;
+            lending.category = vm.productDetail.PrimaryCategoryName;
+            lending.description = vm.productDetail.Description;
+            lending.size = vm.selectedOption;
+            lending.price = vm.price;
+            lending.quantity = 1;
+            lending.availableFrom = new Date();
+            lending.availableTo = lending.availableFrom.getDate() + 15;
+            lending.lender = $rootScope.currentUser;
+            if (lending.availableFrom > lending.availableTo) {
+                vm.error = "Invalid date range";
+            }
+            else{
+            LendingService.createLending(lending)
+                .success(function (response) {
+                    addAlert();
+                    if (response === '0') {
+                        //addAlert();
+                    } else {
+                        vm.mode = 'Rent';
+                        vm.price = "";
+                        //$location.url("#/productDetail/"+ vm.productDetail.ItemID);
+                    }
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
+        }
+        }
+
+        function createRental(lending) {
             var rental = {};
-            rental.productId = vm.productDetail.ItemID;
-            rental.size = vm.selectedOption;
-            rental.price = vm.price;
-            rental.lender = $rootScope.currentUser;
+            rental.lender = lending.lender;
+            rental.productId = lending.productId;
+            rental.rentedQty = 1;
+            rental.rentedFrom = new Date();
+            rental.rentedTo = rental.rentedFrom.getDate() + 5;
+            rental.renter = $rootScope.currentUser;
+            if (rental.rentedFrom < lending.availableFrom || rental.rentedFrom > lending.availableTo
+                || rental.rentedTo < lending.availableFrom || rental.rentedTo > lending.availableTo
+                || rental.rentedFrom > rental.rentedTo) {
+                vm.error = "Invalid date range";
+            }
+            else{
             RentalService.createRental(rental)
                 .success(function (response) {
                     addAlert();
@@ -118,26 +160,8 @@
                 .error(function (data) {
                     console.log(data);
                 });
-
         }
 
-        function updateRental(rental) {
-            var rentalId = rental._id;
-            rental.renter = $rootScope.currentUser;
-            rental.available = false;
-            RentalService.updateRental(rentalId, rental)
-                .success(function (response) {
-                    addAlert();
-                    if (response === '0') {
-                        //addAlert();
-                    } else {
-                        vm.mode = 'Rent';
-                        vm.price = "";
-                    }
-                })
-                .error(function (data) {
-                    console.log(data);
-                });
         }
 
         function findRentalsByProduct(size,itemId) {
@@ -155,9 +179,24 @@
                 });
         }
 
+        function findLendingsByProduct(size,itemId) {
+            //var size = vm.selectedOption;
+            LendingService.findLendingsByProduct(itemId, size)
+                .success(function (lendings) {
+                    if (lendings === '0') {
+                        //addAlert();
+                    } else {
+                        vm.lendings = lendings;
+                    }
+                })
+                .error(function (data) {
+                    console.log(data);
+                });
+        }
+
         function postProdReview(review) {
             var userId = $rootScope.currentUser._id;
-            review.by = userId;
+            review.reviewer = userId;
             review.productId = vm.productDetail.ItemID;
             review.rating = vm.rating;
             ProductReviewService

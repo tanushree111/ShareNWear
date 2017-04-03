@@ -29,7 +29,7 @@ app.use(passport.session());
 return mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'ABcd@1234',
+    password: 'rose2706',
     database: 'dbproj'
 }).then(function (conn) {
     var connection = conn;
@@ -37,11 +37,17 @@ return mysql.createConnection({
     var messageModel = require("./WearNShare/model/message/message.model.server")(connection);
     var userReviewModel = require("./WearNShare/model/userReview/userreview.model.server")(connection);
     var productReviewModel = require("./WearNShare/model/productReview/productreview.model.server")(connection);
+    var productModel = require("./WearNShare/model/product/product.model.server")(connection);
+    var lendingModel = require("./WearNShare/model/lending/lending.model.server")(connection);
+    var rentalModel = require("./WearNShare/model/rental/rental.model.server")(connection);
     var model = {
         userModel: userModel,
         messageModel: messageModel,
         userReviewModel: userReviewModel,
-        productReviewModel:productReviewModel
+        productReviewModel:productReviewModel,
+        productModel:productModel,
+        lendingModel:lendingModel,
+        rentalModel:rentalModel
     };
     require("./WearNShare/app.js")(app, model);
     app.set('ipaddress', (process.env.IP));

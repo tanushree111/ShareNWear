@@ -6,11 +6,10 @@
     function RentalService($http) {
         var api = {
             "createRental": createRental,
-            "findRentalById": findRentalById,
+            "findRental": findRental,
             "findRentalsByLender": findRentalsByLender,
-            "findRentalsByRenter": findRentalsByRenter,
+            "findRentalsForRenter": findRentalsForRenter,
             "findRentalsByProduct": findRentalsByProduct,
-            "updateRental": updateRental,
             "deleteRental": deleteRental
         };
 
@@ -26,7 +25,7 @@
             return $http.get(url);
         }
         
-        function findRentalsByRenter(userId) {
+        function findRentalsForRenter(userId) {
             var url = "/api/renter/"+userId+"/rental";
             return $http.get(url);
         }
@@ -36,18 +35,13 @@
             return $http.get(url);
         }
 
-        function findRentalById(rentalId) {
-            var url = "/api/rental/"+rentalId;
+        function findRental(lenderId,productId,renterId) {
+            var url = "/api/rental/lender/"+lenderId+"/product/"+productId+"/renter/"+renterId;
             return $http.get(url);
         }
 
-        function updateRental(rentalId, newRental) {
-            var url = "/api/rental/"+rentalId;
-            return $http.put(url, newRental);
-        }
-
-        function deleteRental(rentalId) {
-            var url = "/api/rental/"+rentalId;
+        function deleteRental(lenderId,productId,renterId) {
+            var url = "/api/rental/lender/"+lenderId+"/product/"+productId+"/renter/"+renterId;
             return $http.delete(url);
 
         }

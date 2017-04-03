@@ -2,93 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db158698-75d0-4cfe-8d87-313521726617" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server/model/models.server.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/app.js" afterPath="$PROJECT_DIR$/WearNShare/app.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/message/message.model.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/message/message.model.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/message/message.schema.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/message/message.schema.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/models.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/models.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/productReview/productreview.model.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/productReview/productreview.schema.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/productReview/productreview.schema.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/rental/rental.model.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/rental/rental.model.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/rental/rental.schema.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/rental/rental.schema.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/user/user.model.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/user/user.model.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/user/user.schema.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/user/user.schema.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/userReview/userreview.model.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/userReview/userreview.model.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/model/userReview/userreview.schema.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/userReview/userreview.schema.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/services/message.service.server.js" afterPath="$PROJECT_DIR$/WearNShare/services/message.service.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/services/productReview.service.server.js" afterPath="$PROJECT_DIR$/WearNShare/services/productReview.service.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/services/rental.service.server.js" afterPath="$PROJECT_DIR$/WearNShare/services/rental.service.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/services/user.service.server.js" afterPath="$PROJECT_DIR$/WearNShare/services/user.service.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ReWear/services/userReview.service.server.js" afterPath="$PROJECT_DIR$/WearNShare/services/userReview.service.server.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/a11.html" afterPath="$PROJECT_DIR$/public/WearNShare/a11.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/app/app.js" afterPath="$PROJECT_DIR$/public/WearNShare/app/app.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/app/controllers.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/app/controllers.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/config/config.js" afterPath="$PROJECT_DIR$/public/WearNShare/config/config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/public/WearNShare/css/font-awesome.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/css/ngprogress-lite.css" afterPath="$PROJECT_DIR$/public/WearNShare/css/ngprogress-lite.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/css/style.css" afterPath="$PROJECT_DIR$/public/WearNShare/css/style.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/css/style1.scss" afterPath="$PROJECT_DIR$/public/WearNShare/css/style1.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/css/style2.css" afterPath="$PROJECT_DIR$/public/WearNShare/css/style2.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/css/textAngular.css" afterPath="$PROJECT_DIR$/public/WearNShare/css/textAngular.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/directive/boostrapSelect.js" afterPath="$PROJECT_DIR$/public/WearNShare/directive/boostrapSelect.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/directive/mixItUp.js" afterPath="$PROJECT_DIR$/public/WearNShare/directive/mixItUp.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/directive/starRating.js" afterPath="$PROJECT_DIR$/public/WearNShare/directive/starRating.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/image/11.jpg" afterPath="$PROJECT_DIR$/public/WearNShare/image/11.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/image/ebay.png" afterPath="$PROJECT_DIR$/public/WearNShare/image/ebay.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/image/like.png" afterPath="$PROJECT_DIR$/public/WearNShare/image/like.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/image/login.png" afterPath="$PROJECT_DIR$/public/WearNShare/image/login.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/image/reg.png" afterPath="$PROJECT_DIR$/public/WearNShare/image/reg.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/index.html" afterPath="$PROJECT_DIR$/public/WearNShare/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/angular-route.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/angular-route.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/angular-spinner.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/angular-spinner.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/angular.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/angular.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/jquery-min.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/jquery-min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/jquery-ui.min.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/jquery-ui.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/jquery.mixitup.min.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/jquery.mixitup.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/jquery.ui.touch-punch.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/jquery.ui.touch-punch.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/ngprogress-lite.min.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/ngprogress-lite.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/textAngular/textAngular-rangy.min.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/textAngular/textAngular-rangy.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/textAngular/textAngular-sanitize.min.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/textAngular/textAngular-sanitize.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/textAngular/textAngular.min.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/textAngular/textAngular.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/ui-bootstrap-custom-2.2.0.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/ui-bootstrap-custom-2.2.0.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/localjs/ui-bootstrap-custom-tpls-2.2.0.js" afterPath="$PROJECT_DIR$/public/WearNShare/localjs/ui-bootstrap-custom-tpls-2.2.0.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/services/ebay.service.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/services/ebay.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/services/message.service.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/services/message.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/services/productReview.service.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/services/productReview.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/services/rental.service.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/services/rental.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/services/user.service.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/services/user.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/services/userReview.service.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/services/userReview.service.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/uploads/myFile-1481672222004.png" afterPath="$PROJECT_DIR$/public/WearNShare/uploads/myFile-1481672222004.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/uploads/myFile-1481679965274.jpeg" afterPath="$PROJECT_DIR$/public/WearNShare/uploads/myFile-1481679965274.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/uploads/myFile-1481680115366.jpeg" afterPath="$PROJECT_DIR$/public/WearNShare/uploads/myFile-1481680115366.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/uploads/myFile-1481691981847.jpeg" afterPath="$PROJECT_DIR$/public/WearNShare/uploads/myFile-1481691981847.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/uploads/myFile-1481703718873.jpeg" afterPath="$PROJECT_DIR$/public/WearNShare/uploads/myFile-1481703718873.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/admin/admin.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/admin/admin.controller.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/admin/admin.prodReviews.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/admin/admin.prodReviews.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/admin/admin.userReviews.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/admin/admin.userReviews.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/admin/admin.users.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/admin/admin.users.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/admin/admin.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/admin/admin.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/landing/landing.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/landing/landing.controller.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/landing/landing.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/landing/landing.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/archive/productDetail1.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/archive/productDetail1.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/archive/productList.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/archive/productList.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/archive/productList1.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/archive/productList1.controller.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/archive/selOption.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/archive/selOption.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/productDetail.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.controller.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/productDetail.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/productList.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/productList.controller.client.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/productList.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/productList.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/products/productReview.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/productReview.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/user/login.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/user/login.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/user/profile-edit.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/user/profile-edit.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/user/profile.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/user/profile.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/user/register.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/user/register.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/user/seller-profile.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/user/seller-profile.view.client.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/ReWear/views/user/user.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/user/user.controller.client.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WearNShare/model/lending/lending.model.server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WearNShare/model/product/product.model.server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WearNShare/model/rental/rental.model.server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WearNShare/services/lending.service.server.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/WearNShare/services/lending.service.client.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WearNShare/app.js" afterPath="$PROJECT_DIR$/WearNShare/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js" afterPath="$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WearNShare/services/rental.service.server.js" afterPath="$PROJECT_DIR$/WearNShare/services/rental.service.server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/WearNShare/index.html" afterPath="$PROJECT_DIR$/public/WearNShare/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/WearNShare/services/rental.service.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/services/rental.service.client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.controller.client.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.view.client.html" afterPath="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.view.client.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/WearNShare/views/user/user.controller.client.js" afterPath="$PROJECT_DIR$/public/WearNShare/views/user/user.controller.client.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="webdev-project-tintan.iws" />
@@ -112,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="register.view.client.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/register.view.client.html">
+      <file leaf-file-name="productDetail.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productDetail.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+            <state relative-caret-position="76">
+              <caret line="186" column="52" selection-start-line="186" selection-start-column="52" selection-end-line="186" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -125,61 +52,89 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WearNShare/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+            <state relative-caret-position="105">
+              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
+      <file leaf-file-name="profile.view.client.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/profile.view.client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            <state relative-caret-position="910">
+              <caret line="140" column="48" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="205">
+              <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.server.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WearNShare/model/models.server.js">
+      <file leaf-file-name="productDetail.controller.client.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productDetail.controller.client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+            <state relative-caret-position="199">
+              <caret line="202" column="32" selection-start-line="202" selection-start-column="32" selection-end-line="202" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landing.view.client.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/WearNShare/views/landing/landing.view.client.html">
+      <file leaf-file-name="productReview.service.client.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/WearNShare/services/productReview.service.client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+            <state relative-caret-position="-50">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.view.client.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/login.view.client.html">
+      <file leaf-file-name="rental.model.server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WearNShare/model/rental/rental.model.server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="163">
+              <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lending.model.server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WearNShare/model/lending/lending.model.server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-135">
+              <caret line="36" column="112" selection-start-line="36" selection-start-column="112" selection-end-line="36" selection-end-column="112" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productreview.model.server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -192,20 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/ReWear/model/models.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/services/userReview.service.server.js" />
-        <option value="$PROJECT_DIR$/public/ReWear/directive/starRating.js" />
-        <option value="$PROJECT_DIR$/public/ReWear/views/user/sell-profile.view.client.html" />
-        <option value="$PROJECT_DIR$/ReWear/model/userReview/userreview.model.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/productReview/productreview.model.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/message/message.model.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/rental/rental.model.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/user/user.model.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/message/message.schema.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/productReview/productreview.schema.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/rental/rental.schema.server.js" />
-        <option value="$PROJECT_DIR$/ReWear/model/user/user.schema.server.js" />
         <option value="$PROJECT_DIR$/ReWear/model/userReview/userreview.schema.server.js" />
         <option value="$PROJECT_DIR$/public/ReWear/app/controllers.client.js" />
         <option value="$PROJECT_DIR$/public/ReWear/css/style.css" />
@@ -240,8 +181,23 @@
         <option value="$PROJECT_DIR$/public/WearNShare/css/style2.css" />
         <option value="$PROJECT_DIR$/public/WearNShare/views/user/login.view.client.html" />
         <option value="$PROJECT_DIR$/public/WearNShare/views/user/register.view.client.html" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/public/WearNShare/views/landing/landing.view.client.html" />
+        <option value="$PROJECT_DIR$/WearNShare/model/product/product.model.server.js" />
+        <option value="$PROJECT_DIR$/public/WearNShare/services/rental.service.client.js" />
+        <option value="$PROJECT_DIR$/WearNShare/model/rental/rental.model.server.js" />
+        <option value="$PROJECT_DIR$/public/WearNShare/views/user/profile.view.client.html" />
+        <option value="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.controller.client.js" />
+        <option value="$PROJECT_DIR$/WearNShare/model/user/user.model.server.js" />
+        <option value="$PROJECT_DIR$/public/WearNShare/services/lending.service.client.js" />
+        <option value="$PROJECT_DIR$/WearNShare/app.js" />
+        <option value="$PROJECT_DIR$/WearNShare/services/lending.service.server.js" />
+        <option value="$PROJECT_DIR$/public/WearNShare/index.html" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/public/WearNShare/views/user/user.controller.client.js" />
+        <option value="$PROJECT_DIR$/WearNShare/model/lending/lending.model.server.js" />
+        <option value="$PROJECT_DIR$/public/WearNShare/views/products/productDetail.view.client.html" />
+        <option value="$PROJECT_DIR$/WearNShare/services/rental.service.server.js" />
+        <option value="$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js" />
       </list>
     </option>
   </component>
@@ -287,32 +243,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -322,11 +279,29 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearNShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareNWear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -340,47 +315,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WearNShare" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -388,21 +327,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rental" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-project-tintan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="ShareNWear" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -410,33 +349,79 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="landing" />
+              <option name="myItemId" value="productReview" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareNWear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareNWear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearNShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareNWear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShareNWear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WearNShare" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lending" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../CS5610/webdev-project-tintan" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WearNShare/model/productReview" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public/ReWear/views/user" />
-      <recent name="$PROJECT_DIR$/public/ReWear/directive" />
-      <recent name="$PROJECT_DIR$/ReWear" />
-      <recent name="$PROJECT_DIR$/public/ReWear/views" />
+      <recent name="$PROJECT_DIR$/public/WearNShare/services" />
+      <recent name="$PROJECT_DIR$/WearNShare/services" />
+      <recent name="$PROJECT_DIR$/WearNShare/model" />
+      <recent name="$PROJECT_DIR$/WearNShare/model/product" />
+      <recent name="$PROJECT_DIR$/public/WearNShare/views/products" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Server">
@@ -518,29 +503,30 @@
       <workItem from="1481657718305" duration="42285000" />
       <workItem from="1491095310143" duration="721000" />
       <workItem from="1491096135178" duration="1814000" />
+      <workItem from="1491164562148" duration="15088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47476000" />
+    <option name="totallyTimeSpent" value="62564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="23" width="1438" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24982357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28228652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907802" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32907802" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32907802" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907802" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.364539" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -569,32 +555,32 @@
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>264</line>
+          <line>257</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>287</line>
+          <line>280</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>295</line>
+          <line>288</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/model/user/user.model.server.js</url>
-          <line>28</line>
+          <line>21</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>289</line>
+          <line>282</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>284</line>
+          <line>277</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
@@ -606,11 +592,6 @@
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
           <line>12</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint type="javascript">
-          <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>369</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/userReview.service.server.js</url>
@@ -644,42 +625,37 @@
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>382</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint type="javascript">
-          <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>106</line>
+          <line>99</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/model/user/user.model.server.js</url>
-          <line>33</line>
+          <line>22</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>118</line>
+          <line>108</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>125</line>
+          <line>115</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>186</line>
+          <line>179</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>193</line>
+          <line>186</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/WearNShare/services/user.service.server.js</url>
-          <line>327</line>
+          <line>320</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -687,100 +663,28 @@
           <line>45</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/WearNShare/services/productReview.service.server.js</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="32" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/directive/mixItUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/directive/starRating.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/userReview/userreview.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/user/user.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
-          <caret line="30" column="63" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/message/message.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/message/message.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/productReview/productreview.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/rental/rental.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/userReview/userreview.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/user/user.schema.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/rental/rental.model.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="33" column="64" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/user/user.schema.server.js" />
     <entry file="file://$PROJECT_DIR$/public/WearNShare/app/controllers.client.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -796,19 +700,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productReview.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/ReWear/views/user/sell-profile.view.client.html" />
     <entry file="file://$PROJECT_DIR$/public/WearNShare/views/admin/admin.users.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,15 +712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/services/user.service.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="388" column="50" selection-start-line="388" selection-start-column="50" selection-end-line="388" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,15 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,23 +740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/services/productReview.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/services/rental.service.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,15 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/admin/admin.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,39 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/landing/landing.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productDetail.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productDetail.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productList.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -952,7 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,31 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/profile.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/seller-profile.view.client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/user.controller.client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,7 +803,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/login.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
+        <state relative-caret-position="270">
           <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -1024,57 +813,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/register.view.client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
+        <state relative-caret-position="255">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/model/models.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/app.js" />
+    <entry file="file://$PROJECT_DIR$/server/model/models.server.js" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/model/models.server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WearNShare/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,6 +832,225 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/models.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/userReview/userreview.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/services/rental.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productList.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-890">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productReview.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/landing/landing.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/admin/admin.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1110">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/user/user.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/services/lending.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/services/lending.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/services/user.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="217" column="20" selection-start-line="217" selection-start-column="20" selection-end-line="217" selection-end-column="20" />
+          <folding>
+            <marker date="1491182417000" expanded="true" signature="2825:3382" ph="{...}" />
+            <marker date="1491182417000" expanded="true" signature="9454:9919" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/product/product.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/user.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="315" column="47" selection-start-line="315" selection-start-column="27" selection-end-line="315" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/seller-profile.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="163" column="49" selection-start-line="163" selection-start-column="49" selection-end-line="163" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/services/rental.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/services/productReview.service.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productDetail.controller.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="202" column="32" selection-start-line="202" selection-start-column="32" selection-end-line="202" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/products/productDetail.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="186" column="52" selection-start-line="186" selection-start-column="52" selection-end-line="186" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/views/user/profile.view.client.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="910">
+          <caret line="140" column="48" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/productReview/productreview.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/WearNShare/services/productReview.service.client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/rental/rental.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/model/lending/lending.model.server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="36" column="112" selection-start-line="36" selection-start-column="112" selection-end-line="36" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WearNShare/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
           <folding />
         </state>
       </provider>

@@ -54,10 +54,10 @@
                            aria-label="Amount (to the nearest dollar)" placeholder="Whats Your Deal">
                 </div>
                 <div class="action rent-button">
-                    <button ng-click="model.findRentalsByProduct(model.selectedOption,model.elementId)"
+                    <button ng-click="model.findLendingsByProduct(model.selectedOption,model.elementId)"
                             ng-show="model.mode=='Rent'"class="btn btn-primary"
                             type="button">Find Lenders</button>
-                    <button ng-click="model.createRental()" ng-show="model.mode=='Lent'" class="btn btn-primary"
+                    <button ng-click="model.createLending()" ng-show="model.mode=='Lent'" class="btn btn-primary"
                             type="button">Lend It</button>
                     <button class="btn btn-primary" ng-click="model.toggleShowReview(true)" type="button">Add a
                         Review</button>
@@ -70,28 +70,28 @@
             <div class="col-md-4 col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading c-list">
-                        <span class="title">Renters</span>
+                        <span class="title">Lenders</span>
                     </div>
                     <ul class="list-group seller-height" id="contact-list">
-                        <li ng-show="!model.rentals.length">No Lenders Found</li>
-                        <li class="list-group-item" ng-repeat="rental in model.rentals">
+                        <li ng-show="!model.lendings.length">No Lenders Found</li>
+                        <li class="list-group-item" ng-repeat="lending in model.lendings">
                             <div class="col-xs-12 col-sm-3 cold-md-3 col-lg-3">
-                                <a href ="#/user/{{model.userID}}/seller/{{rental.lender._id}}">
-                                <img ng-src="{{rental.lender.url || 'https://app.nimia.com/static/img/default_profile.png'}}"
+                                <a href ="#/user/{{model.userID}}/seller/{{lending.lender}}">
+                                <img ng-src="{{lending.url || 'https://app.nimia.com/static/img/default_profile.png'}}"
                                      class="img-responsive img-circle"/></a>
                             </div>
                             <div class="col-xs-12 col-sm-6">
-                                <span class="name">{{rental.lender.firstName}}&nbsp{{rental.lender.lastName}}</span><br/>
+                                <span class="name">{{lending.firstName}}&nbsp{{lending.lastName}}</span><br/>
                                 <span class="glyphicon glyphicon-envelope text-muted c-info" data-toggle="tooltip"
                                       title="scott.stevens@example.com"></span>
-                                <span class="text-muted">{{rental.lender.email}}</span><br/>
+                                <span class="text-muted">{{lending.email}}</span><br/>
                                 <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip"
                                       title="(870) 288-4149"></span><br>
-                                <span class="text-muted">{{rental.lender.phone}}</span>
+                                <span class="text-muted">{{lending.phone}}</span>
                             </div>
                             <div class="col-xs-12 col-sm-3 cold-md-3 col-lg-3 seller-amount">
-                                <span class="text-move-down">{{rental.price}}<i class="fa fa-dollar"></i></span>
-                                <button ng-click="model.updateRental(rental)" class="btn btn-primary" type="button">Rent
+                                <span class="text-move-down">{{lending.price}}<i class="fa fa-dollar"></i></span>
+                                <button ng-click="model.createRental(lending)" class="btn btn-primary" type="button">Rent
                                     It</button>
                             </div>
                             <div class="clearfix"></div>
@@ -186,7 +186,7 @@
                                     <div class="panel-body">
                                         <p>{{review.description}}</p>
                                         <span></span>
-                                        <span>{{review.by.firstName}}</span>
+                                        <span>{{review.firstName}}</span>
                                         <span class ="pull-right">
                                         <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                                         <span>{{review.dateCreated  | date: MMM/yyyy}}</span>

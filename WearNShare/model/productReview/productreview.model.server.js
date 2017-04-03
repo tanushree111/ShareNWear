@@ -30,7 +30,7 @@ module.exports = function (connection) {
 
     function findProductReviewByUser(userId) {
         return connection.query({
-            sql: 'SELECT * FROM `ProductReviews` WHERE `reviewer` = ?',
+            sql: 'SELECT * FROM `ProductReviews` p, `Users` u WHERE p.reviewer = u.id AND `reviewer` = ?',
             timeout: 40000, // 40s
             values: [userId]
         });
@@ -38,7 +38,8 @@ module.exports = function (connection) {
 
     function findReviewsByProduct(productId) {
         return connection.query({
-            sql: 'SELECT * FROM `ProductReviews` WHERE `productId` = ?',
+            sql: 'SELECT p.reviewer, p.productId, p.rating, p.title, p.description, pd.extId, u.firstName FROM `ProductReviews` p, `Products` pd, `Users` u ' +
+            'WHERE p.productId = pd.id AND p.reviewer = u.id AND pd.extId = ?',
             timeout: 40000, // 40s
             values: [productId]
         });
