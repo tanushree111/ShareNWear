@@ -6,20 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/trinoy/webdev-project-tintan.git"
-  },
   "keywords": [
     "dress",
     "ecommerce"
   ],
   "author": "trinoy tanushree",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/trinoy/webdev-project-tintan/issues"
-  },
-  "homepage": "https://github.com/trinoy/webdev-project-tintan#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.5.0",
