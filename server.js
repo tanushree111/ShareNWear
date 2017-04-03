@@ -29,7 +29,7 @@ app.use(passport.session());
 return mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'rose2706',
+    password: 'ABcd@1234',
     database: 'dbproj'
 }).then(function (conn) {
     var connection = conn;

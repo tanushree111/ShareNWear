@@ -140,7 +140,8 @@
             rental.productId = lending.productId;
             rental.rentedQty = 1;
             var dateToday = new Date();
-            rental.rentedFrom = dateToday;
+            rental.renter = $rootScope.currentUser.id;
+            /*rental.rentedFrom = dateToday;
             dateToday.setDate(dateToday.getDate() +  10);
             rental.rentedTo = dateToday;
             rental.renter = $rootScope.currentUser.id;
@@ -149,7 +150,7 @@
                 || rental.rentedFrom > rental.rentedTo) {
                 vm.error = "Invalid date range";
             }
-            else{
+            else{*/
             RentalService.createRental(rental)
                 .success(function (response) {
                     addAlert();
@@ -164,7 +165,7 @@
                 .error(function (data) {
                     console.log(data);
                 });
-        }
+       // }
 
         }
 
@@ -199,12 +200,13 @@
         }
 
         function postProdReview(review) {
-            var userId = $rootScope.currentUser._id;
+            var userId = $rootScope.currentUser.id;
+            var prodSize = vm.selectedOption;
             review.reviewer = userId;
             review.productId = vm.productDetail.ItemID;
             review.rating = vm.rating;
             ProductReviewService
-                .createProductReview(userId, review)
+                .createProductReview(userId, prodSize, review)
                 .success(function () {
                     $route.reload();
                 })

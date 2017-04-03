@@ -11,7 +11,7 @@ module.exports = function (connection) {
 
     function findAllUserReview() {
         return connection.query({
-            sql: 'SELECT * FROM `UserReviews`',
+            sql: 'SELECT * FROM `UserReviews` ur, `Users` u WHERE ur.reviewer = u.id',
             timeout: 40000
         });
     }
@@ -30,7 +30,7 @@ module.exports = function (connection) {
 
     function findUserReviewByUserId(userId) {
         return connection.query({
-            sql: 'SELECT * FROM `UserReviews` ur inner join `Users` u WHERE ur.reviewer = u.id and `reviewer` = ?',
+            sql: 'SELECT * FROM `UserReviews` ur inner join `Users` u WHERE ur.reviewFor = u.id and `reviewer` = ?',
             timeout: 40000,
             values: [userId]
         });
@@ -39,7 +39,7 @@ module.exports = function (connection) {
 
     function findUserReviewForUserId(userId) {
         return connection.query({
-            sql: 'SELECT * FROM `UserReviews` ur inner join `Users` u WHERE ur.reviewFor = u.id and `reviewFor` = ?',
+            sql: 'SELECT * FROM `UserReviews` ur inner join `Users` u WHERE ur.reviewer = u.id and `reviewFor` = ?',
             timeout: 40000,
             values: [userId]
         });

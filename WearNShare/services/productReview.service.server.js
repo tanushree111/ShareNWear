@@ -1,6 +1,6 @@
 module.exports = function(app, model) {
 
-    app.post('/api/user/:userId/productReview', createProductReview);
+    app.post('/api/user/:userId/:prodSize/productReview', createProductReview);
     app.get('/api/user/:userId/productReview', findProductReviewByUser);
     app.get('/api/productReview/all', findAllProductReview);
     app.get('/api/product/:productId/productReview', findReviewsByProduct);
@@ -66,19 +66,24 @@ module.exports = function(app, model) {
     function createProductReview(req, res){
         var review = req.body;
         var userId = req.params.userId;
-        review.by = userId;
-        model
-            .productReviewModel
-            .createProductReview(review)
-            .then(
-                function(newReview){
-                    res.sendStatus(200);
-                },
-                function(error){
-                    res.sendStatus(400).send(error);
-                }
-            );
+        var prodSize = req.params.prodSize;
 
+        model.productModel.findProductByExtIdSize(review.productId, prodSize)
+            .then(function(product){
+                if (product.length > 0) {
+                    review.productId = product[0].id;
+                   return  model.productReviewModel.createProductReview(review);
+                }
+                else{
+                    res.send(400);
+                }
+            })
+            .then(function(status){
+                res.sendStatus(200);
+            })
+            .catch(function(error){
+                res.send(400);
+            });
     }
 
 

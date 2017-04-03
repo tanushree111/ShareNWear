@@ -11,7 +11,7 @@ module.exports = function (connection) {
 
     function findAllProductReview() {
         return connection.query({
-            sql: 'SELECT * FROM `ProductReviews`',
+            sql: 'SELECT * FROM `ProductReviews` p, `Users` u WHERE p.reviewer = u.id',
             timeout: 40000 // 40s
         });
     }

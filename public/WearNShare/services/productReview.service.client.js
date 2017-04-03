@@ -14,8 +14,8 @@
         };
         return api;
 
-        function createProductReview(userId, review) {
-            var url = "/api/user/"+userId+"/productReview";
+        function createProductReview(userId, prodSize, review) {
+            var url = "/api/user/"+userId+"/"+prodSize+"/productReview";
             return $http.post(url, review);
         }
 
