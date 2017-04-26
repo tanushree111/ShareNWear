@@ -54,7 +54,7 @@
             }
             if($rootScope){
                 if($rootScope.currentUser){
-                    vm.userId = $rootScope.currentUser._id;
+                    vm.userId = $rootScope.currentUser.id;
                 }
             }
         }
