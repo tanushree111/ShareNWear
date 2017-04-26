@@ -151,7 +151,7 @@
             //  vm.error = "Invalid date range";
             //}
             if(lending.lender == rental.renter){
-                vm.error = "You own it!!! Why rent it?";
+                vm.alerts.push({msg: 'You own it!!! Why rent it?'});
             }
             else{
             RentalService.createRental(rental)
@@ -184,8 +184,9 @@
             //var size = vm.selectedOption;
             RentalService.findRentalsByProduct(itemId, size)
                 .success(function (rentals) {
-                    if (rentals === '0') {
+                    if (rentals == '0') {
                         //addAlert();
+                        vm.rentals = {};
                     } else {
                         vm.rentals = rentals;
                     }
@@ -199,8 +200,9 @@
             //var size = vm.selectedOption;
             LendingService.findLendingsByProduct(itemId, size)
                 .success(function (lendings) {
-                    if (lendings === '0') {
+                    if (lendings == '0') {
                         //addAlert();
+                        vm.lendings = {};
                     } else {
                         vm.lendings = lendings;
                     }

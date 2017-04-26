@@ -103,7 +103,7 @@ module.exports = function (app, model) {
                                     res.sendStatus(200);
                                 },
                                 function (error) {
-                                    res.sendStatus(400).send(error);
+                                    res.send(error);
                                 }
                             );
                     } else {
