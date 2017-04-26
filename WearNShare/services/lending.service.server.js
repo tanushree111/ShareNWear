@@ -34,7 +34,7 @@ module.exports = function (app, model) {
             .findProductByExtIdSize(pid, size)
             .then(
                 function (products) {
-                    if (products) {
+                    if (products.length > 0) {
                         // call lending with product id
                         model
                             .lendingModel

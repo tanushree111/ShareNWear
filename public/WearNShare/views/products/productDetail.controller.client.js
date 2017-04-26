@@ -150,7 +150,10 @@
             //   || rental.rentedFrom > rental.rentedTo) {
             //  vm.error = "Invalid date range";
             //}
-            //else{
+            if(lending.lender == rental.renter){
+                vm.error = "You own it!!! Why rent it?";
+            }
+            else{
             RentalService.createRental(rental)
                 .success(function (response) {
                     lending.available = false;
@@ -173,7 +176,7 @@
                 .error(function (data) {
                     console.log(data);
                 });
-            //}
+            }
 
         }
 
