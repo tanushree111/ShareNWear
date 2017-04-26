@@ -174,9 +174,10 @@ module.exports = function (app, model) {
     function updateLending(req, res) {
         var lid = req.params.lenderId;
         var pid = req.params.productId;
+        var lending = req.body;
         model
             .lendingModel
-            .updateLending(lid, pid)
+            .updateLending(lid, pid, lending)
             .then(
                 function (status) {
                     res.sendStatus(200);

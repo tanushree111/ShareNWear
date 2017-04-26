@@ -139,33 +139,41 @@
             rental.lender = lending.lender;
             rental.productId = lending.productId;
             rental.rentedQty = 1;
-            var dateToday = new Date();
             rental.renter = $rootScope.currentUser.id;
-            /*rental.rentedFrom = dateToday;
-            dateToday.setDate(dateToday.getDate() +  10);
-            rental.rentedTo = dateToday;
-            rental.renter = $rootScope.currentUser.id;
-            if (rental.rentedFrom < lending.availableFrom || rental.rentedFrom > lending.availableTo
-                || rental.rentedTo < lending.availableFrom || rental.rentedTo > lending.availableTo
-                || rental.rentedFrom > rental.rentedTo) {
-                vm.error = "Invalid date range";
-            }
-            else{*/
+            //var dateToday = new Date();
+            //rental.rentedFrom = dateToday;
+            //dateToday.setDate(dateToday.getDate() +  10);
+            //rental.rentedTo = dateToday;
+
+            //if (rental.rentedFrom < lending.availableFrom || rental.rentedFrom > lending.availableTo
+            //    || rental.rentedTo < lending.availableFrom || rental.rentedTo > lending.availableTo
+            //   || rental.rentedFrom > rental.rentedTo) {
+            //  vm.error = "Invalid date range";
+            //}
+            //else{
             RentalService.createRental(rental)
                 .success(function (response) {
-                    addAlert();
-                    if (response === '0') {
-                        //addAlert();
-                    } else {
-                        vm.mode = 'Rent';
-                        vm.price = "";
-                        //$location.url("#/productDetail/"+ vm.productDetail.ItemID);
-                    }
+                    lending.available = false;
+                    LendingService.updateLending(lending.lender, lending.productId, lending)
+                        .success(function (response) {
+                            addAlert();
+                            if (response === '0') {
+                                //addAlert();
+                            } else {
+                                vm.mode = 'Rent';
+                                vm.price = "";
+                                //$location.url("#/productDetail/"+ vm.productDetail.ItemID);
+                            }
+                        })
+                        .error(function (data) {
+                            console.log(data);
+                        });
+
                 })
                 .error(function (data) {
                     console.log(data);
                 });
-       // }
+            //}
 
         }
 

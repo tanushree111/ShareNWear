@@ -39,9 +39,9 @@ module.exports = function (connection) {
 
     function findLendingsByProduct(productId) {
         return connection.query({
-            sql: 'SELECT * FROM `Lendings` l inner join `Users` u WHERE l.lender = u.id AND `productId` = ?',
+            sql: 'SELECT * FROM `Lendings` l inner join `Users` u WHERE l.lender = u.id AND `productId` = ? AND `available` = ?',
             timeout: 40000, // 40s
-            values: [productId]
+            values: [productId, true]
         });
     }
 
@@ -57,8 +57,8 @@ module.exports = function (connection) {
         var newUpdate = {
             price: lending.price,
             quantity: lending.quantity,
-            availableFrom: lending.availableFrom,
-            availableTo: lending.availableTo,
+            //availableFrom: lending.availableFrom,
+            //availableTo: lending.availableTo,
             available: lending.available
         };
         return connection.query({
